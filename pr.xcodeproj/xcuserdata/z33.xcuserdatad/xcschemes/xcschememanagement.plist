@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>urlaction.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>CE54CAE61E925762000CC3E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE54CAFF1E9257AF000CC3E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
