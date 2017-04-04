@@ -11,9 +11,16 @@ import MobileCoreServices
 
 class ActionViewController: UIViewController {
 
+    @IBOutlet weak var emptyMessageLabel: UILabel!
+    
+    @IBOutlet weak var localNavigationBar: UINavigationBar!
+    var productView:ProductNode!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        self.loadNavigationItems()
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         print(documentsPath);
 
@@ -22,8 +29,11 @@ class ActionViewController: UIViewController {
                 if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
                     provider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil, completionHandler: { (coding:NSSecureCoding?, error:Error!) in
                         let url = coding as! URL
-                        self.loadNavigationItems()
-                        self.loadProductView(url: url);
+                        
+                        DispatchQueue.main.async {
+                            self.loadProductView(url: url);
+                        }
+                        
                     })
                     
                     break
@@ -34,15 +44,26 @@ class ActionViewController: UIViewController {
     }
     
     func loadNavigationItems() {
-        
+        let closeButton = UIButton(type: .custom)
+        closeButton.setImage(UIImage(named:"close-icon"), for: .normal)
+        closeButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        let closeItem = UIBarButtonItem(customView: closeButton)
+        self.navigationItem.setLeftBarButtonItems([closeItem], animated: false)
     }
     
     func loadProductView(url:URL) {
-        //
+        emptyMessageLabel.isHidden = true
+        //API
+        productView = ProductNode()
+        productView.frame = self.view.bounds
+        productView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubnode(productView)
+        //self.view.sendSubview(toBack: productView.view)
     }
     
 
-    @IBAction func done() {
+    @IBAction func closeAction() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)

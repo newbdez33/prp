@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TLa-bG-3bJ">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -12,39 +12,20 @@
         <!--ActionScene-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController title="Image" id="ObA-dk-sSI" userLabel="ActionScene" customClass="ActionViewController" customModule="urlaction" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product" id="ObA-dk-sSI" userLabel="ActionScene" customClass="ActionViewController" customModule="urlaction" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="464"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-Dm-cuz">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem id="3HJ-uW-3hn">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="Nft-id-6dC">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UDS-bl-DeX">
-                                                <rect key="frame" x="16" y="8" width="28" height="28"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="close-icon"/>
-                                                <connections>
-                                                    <action selector="done" destination="ObA-dk-sSI" eventType="touchUpInside" id="0k3-Aa-DfL"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzS-E3-HUA">
-                                <rect key="frame" x="20" y="246" width="280" height="36"/>
+                                <rect key="frame" x="20" y="214.5" width="280" height="35.5"/>
                                 <string key="text">PriceBot can only be used 
 in the Amazon urls.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,21 +34,36 @@ in the Amazon urls.</string>
                         <constraints>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="1uK-ev-l6N"/>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="20" id="9Xm-ae-ktq"/>
-                            <constraint firstAttribute="trailing" secondItem="NOA-Dm-cuz" secondAttribute="trailing" id="A05-Pj-hrr"/>
-                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="HxO-8t-aoh"/>
                             <constraint firstAttribute="trailing" secondItem="RzS-E3-HUA" secondAttribute="trailing" constant="20" id="Ix6-fy-63R"/>
-                            <constraint firstItem="NOA-Dm-cuz" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="we0-1t-bgp"/>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="xMN-GK-bHC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T0N-KM-DaM"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="emptyMessageLabel" destination="RzS-E3-HUA" id="ul8-Lt-EZD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304" y="201"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4ok-L2-i7L">
+            <objects>
+                <navigationController id="TLa-bG-3bJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="v5n-SY-m2a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ObA-dk-sSI" kind="relationship" relationship="rootViewController" id="aq0-yV-SIA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0e-eK-rdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-418" y="202"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="close-icon" width="33" height="33"/>
-    </resources>
 </document>
