@@ -11,8 +11,6 @@ import MobileCoreServices
 
 class ActionViewController: UIViewController {
 
-    @IBOutlet weak var testLabel: UILabel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -23,8 +21,9 @@ class ActionViewController: UIViewController {
             for provider in item.attachments! as! [NSItemProvider] {
                 if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
                     provider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil, completionHandler: { (coding:NSSecureCoding?, error:Error!) in
-                        let url = coding as! NSURL
-                        self.testLabel.text = url.absoluteString
+                        let url = coding as! URL
+                        self.loadNavigationItems()
+                        self.loadProductView(url: url);
                     })
                     
                     break
@@ -33,6 +32,15 @@ class ActionViewController: UIViewController {
             
         }
     }
+    
+    func loadNavigationItems() {
+        
+    }
+    
+    func loadProductView(url:URL) {
+        //
+    }
+    
 
     @IBAction func done() {
         // Return any edited content to the host app.
