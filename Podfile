@@ -2,6 +2,7 @@ use_frameworks!
 def shared_pods
     pod 'AsyncDisplayKit'
     pod 'RxSwift', '~> 3.0'
+    pod 'Alamofire', '~> 4.4'
 end
 
 target 'pr' do
