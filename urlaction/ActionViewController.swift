@@ -26,20 +26,17 @@ class ActionViewController: UIViewController {
 
         for item in self.extensionContext!.inputItems as! [NSExtensionItem] {
             for provider in item.attachments! as! [NSItemProvider] {
+                print(provider)
                 if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
                     provider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil, completionHandler: { (coding:NSSecureCoding?, error:Error!) in
                         let url = coding as! URL
-                        
                         DispatchQueue.main.async {
                             self.loadProductView(url: url);
                         }
-                        
                     })
-                    
                     break
                 }
             }
-            
         }
     }
     
@@ -60,6 +57,11 @@ class ActionViewController: UIViewController {
         productView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubnode(productView)
         //self.view.sendSubview(toBack: productView.view)
+        
+        // fetch url
+        Item.requestData(url) { (item:Item?) in
+            print("item:\(String(describing: item))")
+        }
     }
     
 
