@@ -61,6 +61,7 @@ class ActionViewController: UIViewController {
         // fetch url
         Item.requestData(url) { (item:Item?) in
             print("item:\(String(describing: item))")
+            self.productView.titleLabel.attributedText = ProductNode.getTitleString(string: String(describing: item))
         }
     }
     

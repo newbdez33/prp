@@ -14,7 +14,6 @@ class ProductNode: ASDisplayNode {
     
     override init() {
         super.init()
-        titleLabel.attributedText = ProductNode.getTitleString(string: "test")
         addSubnode(titleLabel)
     }
     
@@ -25,6 +24,6 @@ class ProductNode: ASDisplayNode {
     }
     
     class func getTitleString(string:String) -> NSAttributedString {
-        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.blue, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!])
+        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!])
     }
 }
