@@ -8,6 +8,7 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.7)
     - PINRemoteImage/PINCache
   - Gloss (1.2.1)
+  - JHSpinner (0.1.3)
   - PINCache (3.0.1-beta.2):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.2)
     - PINCache/Core (= 3.0.1-beta.2)
@@ -26,16 +27,18 @@ DEPENDENCIES:
   - Alamofire (~> 4.4)
   - AsyncDisplayKit
   - Gloss
+  - JHSpinner
   - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AsyncDisplayKit: 28de788f9d6ec573be7662f0fe8931e656357e93
   Gloss: 9ab33b8ede01e4232571d43a6bf9259b85d1de69
+  JHSpinner: c066311c964f8fbce023c6d229e38c558a8bbf42
   PINCache: 6d273a6e0754bd26e3f12a38a90dde73cc6a42b2
   PINRemoteImage: ff63baf185088530db6cfa41cb665e2b5126b5c3
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
 
-PODFILE CHECKSUM: 99a1c6ca21ecf1bb62779249a59ec3dce47a4f4c
+PODFILE CHECKSUM: 6ea9701c85a2e24d27e7beb88367a9dd77c84aae
 
 COCOAPODS: 1.2.0
