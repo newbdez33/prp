@@ -58,4 +58,13 @@ extension Item {
             handler(Item(json: json))
         }
     }
+    
+    static func requestData(_ p:String, handler:@escaping (_ item:Item?) -> ()) {
+        Alamofire.request("http://api.pricebot.salmonapps.com/p/\(p)", method: .get, parameters: [:]).responseJSON { response in
+            guard let json = response.result.value as? JSON else {
+                return handler(nil)
+            }
+            handler(Item(json: json))
+        }
+    }
 }

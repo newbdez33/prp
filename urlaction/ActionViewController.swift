@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import JHSpinner
 
 class ActionViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class ActionViewController: UIViewController {
     
     @IBOutlet weak var localNavigationBar: UINavigationBar!
     var productView:ProductNode!
+    var spinner:JHSpinnerView!
+    var triedCount:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +61,54 @@ class ActionViewController: UIViewController {
         self.view.addSubnode(productView)
         //self.view.sendSubview(toBack: productView.view)
         
+        spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.black.withAlphaComponent(0.92), overlay:.fullScreen, overlayColor:UIColor.clear)
+        view.addSubview(spinner)
         // fetch url
         Item.requestData(url) { (item:Item?) in
-            print("item:\(String(describing: item))")
-            self.productView.titleLabel.attributedText = ProductNode.getTitleString(string: String(describing: item))
+            
+            if item != nil {
+                if item!.title != nil {
+                    self.title = item!.title
+                    self.productView.bindItem(item!)
+                    self.spinner.dismiss()
+                }else {
+                    self.title = "Loading"
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        self.waitingItem(item!.asin)
+                    }
+                }
+                
+            }else {
+                self.spinner.dismiss()
+            }
+            
         }
+    }
+    
+    //TODO https://faye.jcoglan.com 改成pub/sub方式
+    func waitingItem(_ p:String) {
+        triedCount += 1
+        print("Trying \(triedCount).")
+        Item.requestData(p, handler: { (item:Item?) in
+            if item == nil {
+                //TODO to handle fatal error
+                self.spinner.dismiss()
+                self.emptyMessageLabel.text = "Unknown error occurred. please try again later."
+                self.emptyMessageLabel.isHidden = false
+                return
+            }
+            
+            if item!.title == nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.waitingItem(item!.asin)
+                }
+                return
+            }
+            print("Fetched \(item!.title ?? "")")
+            self.title = item!.title
+            self.productView.bindItem(item!)
+            self.spinner.dismiss()
+        })
     }
     
 

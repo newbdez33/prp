@@ -27,3 +27,11 @@ class ProductNode: ASDisplayNode {
         return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!])
     }
 }
+
+extension ProductNode {
+    func bindItem(_ item:Item) {
+        if item.title != nil {
+            titleLabel.attributedText = ProductNode.getTitleString(string: item.title!)
+        }
+    }
+}
