@@ -24,7 +24,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzS-E3-HUA">
                                 <rect key="frame" x="20" y="284" width="335" height="35.5"/>
                                 <string key="text">PriceBot can only be used 
-in the Amazon urls.</string>
+within Amazon URLs.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,10 +56,10 @@ in the Amazon urls.</string>
             </objects>
             <point key="canvasLocation" x="304" y="201"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="4ok-L2-i7L">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLa-bG-3bJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLa-bG-3bJ" customClass="BaseNavigationController" customModule="urlaction" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="v5n-SY-m2a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

@@ -24,7 +24,11 @@ class ActionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.92)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 15)!]
+        setNeedsStatusBarAppearanceUpdate()
         self.extendedLayoutIncludesOpaqueBars = false
         self.edgesForExtendedLayout = .init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false
