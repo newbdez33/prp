@@ -12,37 +12,44 @@
         <!--ActionScene-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController title="Product" id="ObA-dk-sSI" userLabel="ActionScene" customClass="ActionViewController" customModule="urlaction" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Product" automaticallyAdjustsScrollViewInsets="NO" id="ObA-dk-sSI" userLabel="ActionScene" customClass="ActionViewController" customModule="urlaction" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="464"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzS-E3-HUA">
-                                <rect key="frame" x="20" y="214.5" width="280" height="35.5"/>
+                                <rect key="frame" x="20" y="284" width="335" height="35.5"/>
                                 <string key="text">PriceBot can only be used 
 in the Amazon urls.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMp-Cj-FsO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" id="1uK-ev-l6N"/>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="20" id="9Xm-ae-ktq"/>
                             <constraint firstAttribute="trailing" secondItem="RzS-E3-HUA" secondAttribute="trailing" constant="20" id="Ix6-fy-63R"/>
+                            <constraint firstItem="nMp-Cj-FsO" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="Yeo-wU-XGX"/>
+                            <constraint firstAttribute="trailing" secondItem="nMp-Cj-FsO" secondAttribute="trailing" id="dcK-Bw-WUV"/>
+                            <constraint firstItem="nMp-Cj-FsO" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="fGZ-fi-1VG"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="nMp-Cj-FsO" secondAttribute="bottom" id="vTZ-lS-JcQ"/>
                             <constraint firstItem="RzS-E3-HUA" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="xMN-GK-bHC"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="T0N-KM-DaM"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="528"/>
                     <connections>
                         <outlet property="emptyMessageLabel" destination="RzS-E3-HUA" id="ul8-Lt-EZD"/>
+                        <outlet property="scrollView" destination="nMp-Cj-FsO" id="Tf0-ZJ-xOM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,7 +59,8 @@ in the Amazon urls.</string>
         <!--Navigation Controller-->
         <scene sceneID="4ok-L2-i7L">
             <objects>
-                <navigationController id="TLa-bG-3bJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLa-bG-3bJ" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="v5n-SY-m2a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

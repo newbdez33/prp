@@ -11,6 +11,12 @@
 		B9A42FD75254EE4314509A2B /* Pods_pr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D44BDD54356B7571AC3AAE0 /* Pods_pr.framework */; };
 		CE3259361E9F99F6005E5768 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3259351E9F99F6005E5768 /* Item.swift */; };
 		CE3259371E9F99F6005E5768 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3259351E9F99F6005E5768 /* Item.swift */; };
+		CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3259381EA0BE4C005E5768 /* PriceNode.swift */; };
+		CE32593A1EA0BE4C005E5768 /* PriceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3259381EA0BE4C005E5768 /* PriceNode.swift */; };
+		CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593B1EA0BE81005E5768 /* TrendingNode.swift */; };
+		CE32593D1EA0BE81005E5768 /* TrendingNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593B1EA0BE81005E5768 /* TrendingNode.swift */; };
+		CE32593F1EA0C079005E5768 /* InformationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593E1EA0C079005E5768 /* InformationNode.swift */; };
+		CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593E1EA0C079005E5768 /* InformationNode.swift */; };
 		CE54CAEB1E925762000CC3E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */; };
 		CE54CAED1E925762000CC3E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CAEC1E925762000CC3E8 /* ViewController.swift */; };
 		CE54CAF01E925762000CC3E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAEE1E925762000CC3E8 /* Main.storyboard */; };
@@ -56,6 +62,9 @@
 		B989921DDAAFCF2BD6AF577C /* Pods-urlaction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-urlaction.release.xcconfig"; path = "Pods/Target Support Files/Pods-urlaction/Pods-urlaction.release.xcconfig"; sourceTree = "<group>"; };
 		CE007C7CAF8013B388D2E85C /* Pods-pr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pr/Pods-pr.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3259351E9F99F6005E5768 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CE3259381EA0BE4C005E5768 /* PriceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceNode.swift; sourceTree = "<group>"; };
+		CE32593B1EA0BE81005E5768 /* TrendingNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingNode.swift; sourceTree = "<group>"; };
+		CE32593E1EA0C079005E5768 /* InformationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationNode.swift; sourceTree = "<group>"; };
 		CE54CAE71E925762000CC3E8 /* pr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE54CAEC1E925762000CC3E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				CED6C5241E93E8A4009589FA /* ProductNode.swift */,
+				CE3259381EA0BE4C005E5768 /* PriceNode.swift */,
+				CE32593B1EA0BE81005E5768 /* TrendingNode.swift */,
+				CE32593E1EA0C079005E5768 /* InformationNode.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -381,9 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
+				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE54CAED1E925762000CC3E8 /* ViewController.swift in Sources */,
 				CE54CAEB1E925762000CC3E8 /* AppDelegate.swift in Sources */,
+				CE32593F1EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CED6C5251E93E8A4009589FA /* ProductNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,9 +407,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */,
 				CE3259371E9F99F6005E5768 /* Item.swift in Sources */,
 				CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */,
+				CE32593D1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
+				CE32593A1EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

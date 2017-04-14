@@ -9,19 +9,25 @@
 import UIKit
 import MobileCoreServices
 import JHSpinner
+import AsyncDisplayKit
 
 class ActionViewController: UIViewController {
 
     @IBOutlet weak var emptyMessageLabel: UILabel!
     
     @IBOutlet weak var localNavigationBar: UINavigationBar!
-    var productView:ProductNode!
+    @IBOutlet weak var scrollView: UIScrollView!
+    var productNode:ProductNode! = ProductNode()
+    
     var spinner:JHSpinnerView!
     var triedCount:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        self.extendedLayoutIncludesOpaqueBars = false
+        self.edgesForExtendedLayout = .init(rawValue: 0)
+        self.automaticallyAdjustsScrollViewInsets = false
         self.loadNavigationItems()
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -29,7 +35,7 @@ class ActionViewController: UIViewController {
 
         for item in self.extensionContext!.inputItems as! [NSExtensionItem] {
             for provider in item.attachments! as! [NSItemProvider] {
-                print(provider)
+                //print(provider)
                 if provider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
                     provider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil, completionHandler: { (coding:NSSecureCoding?, error:Error!) in
                         let url = coding as! URL
@@ -41,6 +47,14 @@ class ActionViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { context in
+            self.productNode.frame = CGRect(x: 0, y: 0, width: size.width, height: self.productNode.heightOfContents())
+            self.scrollView.contentSize = CGSize(width: size.width, height: self.productNode.heightOfContents())
+        })
     }
     
     func loadNavigationItems() {
@@ -55,11 +69,9 @@ class ActionViewController: UIViewController {
     func loadProductView(url:URL) {
         emptyMessageLabel.isHidden = true
         //API
-        productView = ProductNode()
-        productView.frame = self.view.bounds
-        productView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubnode(productView)
-        //self.view.sendSubview(toBack: productView.view)
+        productNode.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: productNode.heightOfContents())
+        scrollView.contentSize = CGSize(width: self.view.bounds.size.width, height: productNode.heightOfContents())
+        scrollView.addSubnode(productNode)
         
         spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.black.withAlphaComponent(0.92), overlay:.fullScreen, overlayColor:UIColor.clear)
         view.addSubview(spinner)
@@ -69,7 +81,8 @@ class ActionViewController: UIViewController {
             if item != nil {
                 if item!.title != nil {
                     self.title = item!.title
-                    self.productView.bindItem(item!)
+                    self.productNode.bindItem(item!)
+                    self.productNode.setNeedsLayout()
                     self.spinner.dismiss()
                 }else {
                     self.title = "Loading"
@@ -106,7 +119,7 @@ class ActionViewController: UIViewController {
             }
             print("Fetched \(item!.title ?? "")")
             self.title = item!.title
-            self.productView.bindItem(item!)
+            self.productNode.bindItem(item!)
             self.spinner.dismiss()
         })
     }

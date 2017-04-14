@@ -10,28 +10,36 @@ import UIKit
 import AsyncDisplayKit
 
 class ProductNode: ASDisplayNode {
-    let titleLabel = ASTextNode()
+    
+    let infoNode = InformationNode()
+    let priceNode = PriceNode()
+    let trendingNode = TrendingNode()
     
     override init() {
         super.init()
-        addSubnode(titleLabel)
+        addSubnode(infoNode)
+        addSubnode(priceNode)
+        addSubnode(trendingNode)
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        let spacer = ASLayoutSpec()
-        spacer.style.height = ASDimensionMake(40)
-        return ASStackLayoutSpec(direction: .vertical, spacing: 2, justifyContent: .center, alignItems: .center, children:[spacer, titleLabel])
+
+        infoNode.style.height = ASDimensionMake(InformationNode.nodeHeight)
+        priceNode.style.height = ASDimensionMake(PriceNode.nodeHeight)
+        trendingNode.style.height = ASDimensionMake(TrendingNode.nodeHeight)
+        let stack = ASStackLayoutSpec(direction: .vertical, spacing: 2, justifyContent: .center, alignItems: .stretch, children:[infoNode, priceNode, trendingNode])
+        
+        return stack
     }
     
-    class func getTitleString(string:String) -> NSAttributedString {
-        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!])
+    func heightOfContents() -> CGFloat {
+        return InformationNode.nodeHeight + PriceNode.nodeHeight + TrendingNode.nodeHeight
     }
+    
 }
 
 extension ProductNode {
     func bindItem(_ item:Item) {
-        if item.title != nil {
-            titleLabel.attributedText = ProductNode.getTitleString(string: item.title!)
-        }
+        infoNode.bindItem(item)
     }
 }
