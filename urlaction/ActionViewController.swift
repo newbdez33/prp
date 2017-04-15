@@ -88,8 +88,7 @@ class ActionViewController: UIViewController {
             if item != nil {
                 if item!.title != nil {
                     //self.title = item!.title
-                    self.productNode.bindItem(item!)
-                    self.productNode.setNeedsLayout()
+                    self.bindItem(item!)
                     self.spinner.dismiss()
                 }else {
                     //self.title = "Loading"
@@ -126,11 +125,21 @@ class ActionViewController: UIViewController {
             }
             print("Fetched \(item!.title ?? "")")
             //self.title = item!.title
-            self.productNode.bindItem(item!)
+            self.bindItem(item!)
             self.spinner.dismiss()
         })
     }
     
+    func bindItem(_ item:Item) {
+        self.productNode.bindItem(item)
+        //self.productNode.setNeedsLayout()
+        self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ActionViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
+    }
+    
+    func saveItemAction(_ sender:ASButtonNode) {
+        sender.isSelected = true
+        print("save action")
+    }
 
     @IBAction func closeAction() {
         // Return any edited content to the host app.
