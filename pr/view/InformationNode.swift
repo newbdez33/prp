@@ -11,7 +11,7 @@ import AsyncDisplayKit
 
 class InformationNode: ASDisplayNode {
     
-    static let nodeHeight:CGFloat = 150
+    static let nodeHeight:CGFloat = 100
     
     let imageNode = ASNetworkImageNode()
     let titleNode = ASTextNode()
@@ -24,7 +24,7 @@ class InformationNode: ASDisplayNode {
     }
     
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
-        imageNode.style.preferredSize =  CGSize(width: 120, height: 120)
+        imageNode.style.preferredSize =  CGSize(width: InformationNode.nodeHeight * 0.9, height: InformationNode.nodeHeight * 0.9)
         let right = ASStackLayoutSpec(direction: .vertical, spacing: 2, justifyContent: .center, alignItems: .center, children:[titleNode])
         let stack = ASStackLayoutSpec(direction: .horizontal, spacing: 2, justifyContent: .center, alignItems: .center, children: [imageNode, right])
         right.style.flexGrow = 1

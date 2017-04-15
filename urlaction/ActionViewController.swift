@@ -64,7 +64,7 @@ class ActionViewController: UIViewController {
     func loadNavigationItems() {
         let closeButton = UIButton(type: .custom)
         closeButton.setImage(UIImage(named:"close-icon"), for: .normal)
-        closeButton.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        closeButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         let closeItem = UIBarButtonItem(customView: closeButton)
         self.navigationItem.setLeftBarButtonItems([closeItem], animated: false)
