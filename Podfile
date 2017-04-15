@@ -7,6 +7,7 @@ def shared_pods
     pod 'Alamofire', '~> 4.4'
     pod 'Gloss'
     pod 'JHSpinner'
+    pod 'Charts'
 end
 
 target 'pr' do

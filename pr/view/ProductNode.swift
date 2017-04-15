@@ -41,5 +41,6 @@ class ProductNode: ASDisplayNode {
 extension ProductNode {
     func bindItem(_ item:Item) {
         infoNode.bindItem(item)
+        priceNode.bindItem(item)
     }
 }

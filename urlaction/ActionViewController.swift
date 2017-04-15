@@ -24,6 +24,9 @@ class ActionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Price Bot"
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.92)
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
@@ -84,12 +87,12 @@ class ActionViewController: UIViewController {
             
             if item != nil {
                 if item!.title != nil {
-                    self.title = item!.title
+                    //self.title = item!.title
                     self.productNode.bindItem(item!)
                     self.productNode.setNeedsLayout()
                     self.spinner.dismiss()
                 }else {
-                    self.title = "Loading"
+                    //self.title = "Loading"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                         self.waitingItem(item!.asin)
                     }
@@ -122,7 +125,7 @@ class ActionViewController: UIViewController {
                 return
             }
             print("Fetched \(item!.title ?? "")")
-            self.title = item!.title
+            //self.title = item!.title
             self.productNode.bindItem(item!)
             self.spinner.dismiss()
         })
