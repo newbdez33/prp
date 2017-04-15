@@ -24,6 +24,11 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.7):
     - PINCache (= 3.0.1-beta.2)
     - PINRemoteImage/Core
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
+  - RealmSwift (2.5.1):
+    - Realm (= 2.5.1)
   - RxSwift (3.2.0)
 
 DEPENDENCIES:
@@ -32,6 +37,7 @@ DEPENDENCIES:
   - Charts
   - Gloss
   - JHSpinner
+  - RealmSwift
   - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -42,8 +48,10 @@ SPEC CHECKSUMS:
   JHSpinner: c066311c964f8fbce023c6d229e38c558a8bbf42
   PINCache: 6d273a6e0754bd26e3f12a38a90dde73cc6a42b2
   PINRemoteImage: ff63baf185088530db6cfa41cb665e2b5126b5c3
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
 
-PODFILE CHECKSUM: 38ce5dabad31d82f39a26c1641c0346f7f256021
+PODFILE CHECKSUM: c4530262c11f6fcfecdad142cfdd311bff3ab455
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
