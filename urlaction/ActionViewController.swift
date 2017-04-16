@@ -10,6 +10,7 @@ import UIKit
 import MobileCoreServices
 import JHSpinner
 import AsyncDisplayKit
+import RealmSwift
 
 class ActionViewController: UIViewController {
 
@@ -22,8 +23,12 @@ class ActionViewController: UIViewController {
     var spinner:JHSpinnerView!
     var triedCount:Int = 0
     
+    var asin:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Realm.Configuration.defaultConfiguration = PRConfig.realmConfig()
         
         self.title = "Price Bot"
         
@@ -36,9 +41,6 @@ class ActionViewController: UIViewController {
         self.edgesForExtendedLayout = .init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false
         self.loadNavigationItems()
-        
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        print(documentsPath);
 
         for item in self.extensionContext!.inputItems as! [NSExtensionItem] {
             for provider in item.attachments! as! [NSItemProvider] {
@@ -83,11 +85,20 @@ class ActionViewController: UIViewController {
         spinner = JHSpinnerView.showOnView(view, spinnerColor:UIColor.black.withAlphaComponent(0.92), overlay:.fullScreen, overlayColor:UIColor.clear)
         view.addSubview(spinner)
         // fetch url
-        Item.requestData(url) { (item:Item?) in
+        Item.requestWithUrl(url:url) { (item:Item?) in
             
-            if item != nil {
-                if item!.title != nil {
+            if item != nil && item!.asin != "" {
+                self.asin = item!.asin
+                let founded = Item.find(byId: item!.asin)
+                if founded != nil {
+                    self.bindItem(founded!)
+                    self.spinner.dismiss()
+                    return
+                }
+                
+                if item!.title != "" {
                     //self.title = item!.title
+                    item!.save()
                     self.bindItem(item!)
                     self.spinner.dismiss()
                 }else {
@@ -108,7 +119,7 @@ class ActionViewController: UIViewController {
     func waitingItem(_ p:String) {
         triedCount += 1
         print("Trying \(triedCount).")
-        Item.requestData(p, handler: { (item:Item?) in
+        Item.requestWithId(p:p, handler: { (item:Item?) in
             if item == nil {
                 //TODO to handle fatal error
                 self.spinner.dismiss()
@@ -117,13 +128,13 @@ class ActionViewController: UIViewController {
                 return
             }
             
-            if item!.title == nil {
+            item!.save()
+            if item!.title == "" {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.waitingItem(item!.asin)
                 }
                 return
             }
-            print("Fetched \(item!.title ?? "")")
             //self.title = item!.title
             self.bindItem(item!)
             self.spinner.dismiss()
@@ -131,19 +142,30 @@ class ActionViewController: UIViewController {
     }
     
     func bindItem(_ item:Item) {
+        
         self.productNode.bindItem(item)
         //self.productNode.setNeedsLayout()
         self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ActionViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
     }
     
     func saveItemAction(_ sender:ASButtonNode) {
-        sender.isSelected = true
-        print("save action")
+        if self.asin == nil {
+            //error handling
+            return
+        }
+        sender.isSelected = !sender.isSelected
+        if let item = Item.find(byId: self.asin!) {
+            item.saveTracking(tracking: sender.isSelected)
+            print("save action")
+        }
+        
     }
 
     @IBAction func closeAction() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
+        let item = Item.find(byId: asin!)
+        print(item!)
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
 

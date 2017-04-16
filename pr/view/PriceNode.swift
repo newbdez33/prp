@@ -72,20 +72,23 @@ class PriceNode: ASDisplayNode {
 
 extension PriceNode {
     func bindItem(_ item:Item) {
-        if item.price != nil {
+        
+        saveButton.isSelected = item.isTracking
+        
+        if item.price != 0 {
             //currentNode.attributedText = PriceNode.getPriceString(string: "\(item.price!)")
-            let current = item.price!
+            let current = item.price
             var lowest = current
             var highest = current
             var currency = ""
-            if item.lowest != nil {
-                lowest = item.lowest!
+            if item.lowest != 0 {
+                lowest = item.lowest
             }
-            if item.highest != nil {
-                highest = item.highest!
+            if item.highest != 0 {
+                highest = item.highest
             }
-            if item.currency != nil {
-                currency =  item.currency!
+            if item.currency != "" {
+                currency =  item.currency
             }
             let chartView = precentBarChartNode.view as! HorizontalBarChartView
             chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Lowest: \(currency)\(lowest)", "Highest: \(currency)\(highest)", "Current: \(currency)\(current)"])

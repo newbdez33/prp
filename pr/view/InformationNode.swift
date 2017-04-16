@@ -40,11 +40,9 @@ class InformationNode: ASDisplayNode {
 
 extension InformationNode {
     func bindItem(_ item:Item) {
-        if item.title != nil {
-            titleNode.attributedText = InformationNode.getTitleString(string: item.title!)
-        }
-        if item.photo != nil {
-            if let url = URL(string:item.photo!) {
+        titleNode.attributedText = InformationNode.getTitleString(string: item.title)
+        if item.photo != "" {
+            if let url = URL(string:item.photo) {
                 imageNode.url = url
             }
         }

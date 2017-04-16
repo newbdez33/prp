@@ -25,6 +25,8 @@
 		CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CB021E9257AF000CC3E8 /* ActionViewController.swift */; };
 		CE54CB061E9257AF000CC3E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CB041E9257AF000CC3E8 /* MainInterface.storyboard */; };
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
+		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEB0E4291E92761100A7B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
@@ -80,6 +82,7 @@
 		CE54CB071E9257AF000CC3E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE54CB0F1E925C8E000CC3E8 /* urlaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urlaction.entitlements; sourceTree = "<group>"; };
 		CE54CB101E925E44000CC3E8 /* pr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pr.entitlements; sourceTree = "<group>"; };
+		CE8A80CF1EA352610021C69B /* PRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRConfig.swift; sourceTree = "<group>"; };
 		CEA50FF01EA137480060772D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +162,7 @@
 				CE3259341E9F99CF005E5768 /* model */,
 				CED6C5231E93E4F9009589FA /* view */,
 				CE54CB101E925E44000CC3E8 /* pr.entitlements */,
+				CE8A80CF1EA352610021C69B /* PRConfig.swift */,
 				CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */,
 				CE54CAEC1E925762000CC3E8 /* ViewController.swift */,
 				CE54CAEE1E925762000CC3E8 /* Main.storyboard */,
@@ -409,6 +413,7 @@
 				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
+				CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */,
 				CE54CAED1E925762000CC3E8 /* ViewController.swift in Sources */,
 				CE54CAEB1E925762000CC3E8 /* AppDelegate.swift in Sources */,
 				CE32593F1EA0C079005E5768 /* InformationNode.swift in Sources */,
@@ -421,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */,
+				CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */,
 				CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */,
 				CE3259371E9F99F6005E5768 /* Item.swift in Sources */,
