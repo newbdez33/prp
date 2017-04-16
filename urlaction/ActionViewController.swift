@@ -127,14 +127,14 @@ class ActionViewController: UIViewController {
                 self.emptyMessageLabel.isHidden = false
                 return
             }
-            
-            item!.save()
+
             if item!.title == "" {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.waitingItem(item!.asin)
                 }
                 return
             }
+            item!.save()
             //self.title = item!.title
             self.bindItem(item!)
             self.spinner.dismiss()
