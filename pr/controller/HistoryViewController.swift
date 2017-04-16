@@ -1,5 +1,5 @@
 //
-//  TrackingViewController.swift
+//  HistoryViewController.swift
 //  pr
 //
 //  Created by JackyZ on 2017/04/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class TrackingViewController: UIViewController {
+class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
-    }
 
+        self.title = "History"
+    }
 
 }

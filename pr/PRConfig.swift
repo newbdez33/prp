@@ -26,5 +26,9 @@ struct PRConfig {
         
         return config
     }
+    
+    static func setupUI() {
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.prDefault(size: 15)]
+    }
 
 }

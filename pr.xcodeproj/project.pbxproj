@@ -18,8 +18,6 @@
 		CE32593F1EA0C079005E5768 /* InformationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593E1EA0C079005E5768 /* InformationNode.swift */; };
 		CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32593E1EA0C079005E5768 /* InformationNode.swift */; };
 		CE54CAEB1E925762000CC3E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */; };
-		CE54CAED1E925762000CC3E8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CAEC1E925762000CC3E8 /* MainViewController.swift */; };
-		CE54CAF01E925762000CC3E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAEE1E925762000CC3E8 /* Main.storyboard */; };
 		CE54CAF21E925762000CC3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
 		CE54CAF51E925762000CC3E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF31E925762000CC3E8 /* LaunchScreen.storyboard */; };
 		CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CB021E9257AF000CC3E8 /* ActionViewController.swift */; };
@@ -27,10 +25,14 @@
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
-		CE8A80D41EA381A80021C69B /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D31EA381A80021C69B /* TrackingViewController.swift */; };
+		CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D31EA381A80021C69B /* MineViewController.swift */; };
 		CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D51EA39CC70021C69B /* PRTabbarItemView.swift */; };
 		CE8A80D91EA3A16F0021C69B /* UIColor+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D81EA3A16F0021C69B /* UIColor+PR.swift */; };
 		CE8A80DA1EA3A16F0021C69B /* UIColor+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D81EA3A16F0021C69B /* UIColor+PR.swift */; };
+		CE8A80DC1EA3A8190021C69B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */; };
+		CE8A80DE1EA3A8730021C69B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */; };
+		CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */; };
+		CE8A80E11EA3AA150021C69B /* UIFont+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */; };
 		CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEB0E4291E92761100A7B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
@@ -75,8 +77,6 @@
 		CE32593E1EA0C079005E5768 /* InformationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationNode.swift; sourceTree = "<group>"; };
 		CE54CAE71E925762000CC3E8 /* pr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE54CAEC1E925762000CC3E8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CE54CAEF1E925762000CC3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE54CAF11E925762000CC3E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE54CAF41E925762000CC3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE54CAF61E925762000CC3E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,9 +87,12 @@
 		CE54CB0F1E925C8E000CC3E8 /* urlaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urlaction.entitlements; sourceTree = "<group>"; };
 		CE54CB101E925E44000CC3E8 /* pr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pr.entitlements; sourceTree = "<group>"; };
 		CE8A80CF1EA352610021C69B /* PRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRConfig.swift; sourceTree = "<group>"; };
-		CE8A80D31EA381A80021C69B /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		CE8A80D31EA381A80021C69B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		CE8A80D51EA39CC70021C69B /* PRTabbarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarItemView.swift; sourceTree = "<group>"; };
 		CE8A80D81EA3A16F0021C69B /* UIColor+PR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+PR.swift"; sourceTree = "<group>"; };
+		CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+PR.swift"; sourceTree = "<group>"; };
 		CEA50FF01EA137480060772D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,8 +176,6 @@
 				CE54CB101E925E44000CC3E8 /* pr.entitlements */,
 				CE8A80CF1EA352610021C69B /* PRConfig.swift */,
 				CE54CAEA1E925762000CC3E8 /* AppDelegate.swift */,
-				CE54CAEC1E925762000CC3E8 /* MainViewController.swift */,
-				CE54CAEE1E925762000CC3E8 /* Main.storyboard */,
 				CE54CAF11E925762000CC3E8 /* Assets.xcassets */,
 				CE54CAF31E925762000CC3E8 /* LaunchScreen.storyboard */,
 				CE54CAF61E925762000CC3E8 /* Info.plist */,
@@ -196,7 +197,9 @@
 		CE8A80D21EA381780021C69B /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				CE8A80D31EA381A80021C69B /* TrackingViewController.swift */,
+				CE8A80D31EA381A80021C69B /* MineViewController.swift */,
+				CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */,
+				CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8A80D81EA3A16F0021C69B /* UIColor+PR.swift */,
+				CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -337,7 +341,6 @@
 			files = (
 				CE54CAF51E925762000CC3E8 /* LaunchScreen.storyboard in Resources */,
 				CE54CAF21E925762000CC3E8 /* Assets.xcassets in Resources */,
-				CE54CAF01E925762000CC3E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,16 +438,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */,
 				CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
 				CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
+				CE8A80DE1EA3A8730021C69B /* HistoryViewController.swift in Sources */,
 				CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */,
-				CE8A80D41EA381A80021C69B /* TrackingViewController.swift in Sources */,
-				CE54CAED1E925762000CC3E8 /* MainViewController.swift in Sources */,
+				CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */,
 				CE54CAEB1E925762000CC3E8 /* AppDelegate.swift in Sources */,
 				CE8A80D91EA3A16F0021C69B /* UIColor+PR.swift in Sources */,
+				CE8A80DC1EA3A8190021C69B /* SettingsViewController.swift in Sources */,
 				CE32593F1EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CED6C5251E93E8A4009589FA /* ProductNode.swift in Sources */,
 			);
@@ -454,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8A80E11EA3AA150021C69B /* UIFont+PR.swift in Sources */,
 				CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */,
 				CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */,
@@ -477,14 +483,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CE54CAEE1E925762000CC3E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE54CAEF1E925762000CC3E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE54CAF31E925762000CC3E8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

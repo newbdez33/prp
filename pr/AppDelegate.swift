@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
 
-            let trackingVc = UINavigationController(rootViewController: TrackingViewController())
-            let historyVc = TrackingViewController()
-            let settingsVc = TrackingViewController()
+            let mineVc = UINavigationController(rootViewController: MineViewController())
+            let historyVc = UINavigationController(rootViewController: HistoryViewController())
+            let settingsVc = UINavigationController(rootViewController: SettingsViewController())
             
-            trackingVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Mine", image: UIImage(named:"star_tab"), selectedImage: UIImage(named:"star_tab"))
+            mineVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Mine", image: UIImage(named:"star_tab"), selectedImage: UIImage(named:"star_tab"))
             historyVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "History", image: UIImage(named:"history_tab"), selectedImage: UIImage(named:"history_tab"))
             settingsVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Settings", image: UIImage(named:"settings_tab"), selectedImage: UIImage(named:"settings_tab"))
             
@@ -33,12 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let tabBar = tabBarController.tabBar as? ESTabBar {
                 tabBar.itemCustomPositioning = .fillIncludeSeparator
             }
-            tabBarController.viewControllers = [trackingVc, historyVc, settingsVc]
+            tabBarController.viewControllers = [mineVc, historyVc, settingsVc]
             window.rootViewController = tabBarController
             window.backgroundColor = UIColor.white
             window.makeKeyAndVisible()
         }
         
+        PRConfig.setupUI()
         Realm.Configuration.defaultConfiguration = PRConfig.realmConfig()        
         return true
     }
