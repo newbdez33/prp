@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             settingsVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Settings", image: UIImage(named:"settings_tab"), selectedImage: UIImage(named:"settings_tab"))
             
             let tabBarController = ESTabBarController()
+            tabBarController.viewControllers = [mineVc, historyVc, settingsVc]
             if let tabBar = tabBarController.tabBar as? ESTabBar {
                 tabBar.itemCustomPositioning = .fillIncludeSeparator
             }
-            tabBarController.viewControllers = [mineVc, historyVc, settingsVc]
             window.rootViewController = tabBarController
             window.backgroundColor = UIColor.white
             window.makeKeyAndVisible()
