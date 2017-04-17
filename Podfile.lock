@@ -1,29 +1,25 @@
 PODS:
   - Alamofire (4.4.0)
-  - AsyncDisplayKit (2.1):
-    - AsyncDisplayKit/PINRemoteImage (= 2.1)
-  - AsyncDisplayKit/Core (2.1)
-  - AsyncDisplayKit/PINRemoteImage (2.1):
-    - AsyncDisplayKit/Core
-    - PINRemoteImage/iOS (= 3.0.0-beta.7)
-    - PINRemoteImage/PINCache
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
   - ESTabBarController-swift (2.3)
   - Gloss (1.2.1)
   - JHSpinner (0.1.3)
-  - PINCache (3.0.1-beta.2):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.2)
-    - PINCache/Core (= 3.0.1-beta.2)
-  - PINCache/Arc-exception-safe (3.0.1-beta.2):
+  - PINCache (3.0.1-beta.4):
+    - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
+    - PINCache/Core (= 3.0.1-beta.4)
+  - PINCache/Arc-exception-safe (3.0.1-beta.4):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.2)
-  - PINRemoteImage/Core (3.0.0-beta.7)
-  - PINRemoteImage/iOS (3.0.0-beta.7):
+  - PINCache/Core (3.0.1-beta.4):
+    - PINOperation (= 1.0.3)
+  - PINOperation (1.0.3)
+  - PINRemoteImage/Core (3.0.0-beta.9):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.0-beta.9):
     - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.7):
-    - PINCache (= 3.0.1-beta.2)
+  - PINRemoteImage/PINCache (3.0.0-beta.9):
+    - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
   - Realm (2.5.1):
     - Realm/Headers (= 2.5.1)
@@ -31,30 +27,38 @@ PODS:
   - RealmSwift (2.5.1):
     - Realm (= 2.5.1)
   - RxSwift (3.2.0)
+  - Texture (2.3):
+    - Texture/PINRemoteImage (= 2.3)
+  - Texture/Core (2.3)
+  - Texture/PINRemoteImage (2.3):
+    - PINRemoteImage/iOS (= 3.0.0-beta.9)
+    - PINRemoteImage/PINCache
+    - Texture/Core
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
-  - AsyncDisplayKit
   - Charts
   - ESTabBarController-swift
   - Gloss
   - JHSpinner
   - RealmSwift
   - RxSwift (~> 3.0)
+  - Texture
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AsyncDisplayKit: 28de788f9d6ec573be7662f0fe8931e656357e93
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   ESTabBarController-swift: 23011ffbee6cd66a37309f00c7c21c9dd63c17de
   Gloss: 9ab33b8ede01e4232571d43a6bf9259b85d1de69
   JHSpinner: c066311c964f8fbce023c6d229e38c558a8bbf42
-  PINCache: 6d273a6e0754bd26e3f12a38a90dde73cc6a42b2
-  PINRemoteImage: ff63baf185088530db6cfa41cb665e2b5126b5c3
+  PINCache: a89c8f609232afac77128557bd12c861844423d7
+  PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
+  PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
   Realm: 32f86104d37c8521f864d4274050b38ba6190733
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  Texture: de523401d6c296e63249021246a95bf7f90b3d9c
 
-PODFILE CHECKSUM: 690d8e353b51c812271c30de12dabda853ab899f
+PODFILE CHECKSUM: 0e6855975378e7c3a0ee599c5891f20c926082d4
 
 COCOAPODS: 1.2.1
