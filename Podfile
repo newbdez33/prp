@@ -4,7 +4,7 @@ inhibit_all_warnings!
 platform :ios, '10.0'
 
 def shared_pods
-    pod 'AsyncDisplayKit'
+    pod 'Texture'
     pod 'RxSwift', '~> 3.0'
     pod 'Alamofire', '~> 4.4'
     pod 'Gloss'
