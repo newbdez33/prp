@@ -33,7 +33,7 @@ class InformationNode: ASDisplayNode {
     }
     
     class func getTitleString(string:String) -> NSAttributedString {
-        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 14)!])
+        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.prBlack(), NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 14)!])
     }
     
 }

@@ -98,4 +98,11 @@ extension Item {
             handler(Item(json: json))
         }
     }
+    
+    static func mineItems() -> Results<Item> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "isTracking == true")
+        let result = realm.objects(Item.self).filter(predicate) as Results<Item>
+        return result
+    }
 }

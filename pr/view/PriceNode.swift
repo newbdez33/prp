@@ -66,7 +66,7 @@ class PriceNode: ASDisplayNode {
     }
     
     class func getPriceString(string:String) -> NSAttributedString {
-        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.black, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 12)!])
+        return NSAttributedString(string: string, attributes: [ NSForegroundColorAttributeName : UIColor.prBlack(), NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 12)!])
     }
 }
 

@@ -164,8 +164,9 @@ class ActionViewController: UIViewController {
     @IBAction func closeAction() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
-        let item = Item.find(byId: asin!)
-        print(item!)
+        //let item = Item.find(byId: asin!)
+        //let realm = try! Realm()
+        //print(realm.objects(Item.self))
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
 
