@@ -47,6 +47,18 @@ class PriceNode: ASDisplayNode {
         
         return chartView
     }
+    
+    let lineChartNode = ASDisplayNode { () -> UIView in
+        let chartView = LineChartView()
+        chartView.noDataText = ""
+        chartView.chartDescription?.enabled = false
+        chartView.drawGridBackgroundEnabled = false
+        chartView.dragEnabled = false
+        chartView.setScaleEnabled(false)
+        chartView.pinchZoomEnabled = false
+        
+        return chartView
+    }
     let saveButton = ASButtonNode()
     
     

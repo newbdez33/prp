@@ -10,14 +10,24 @@ import UIKit
 import RealmSwift
 import AsyncDisplayKit
 
-class MineViewController: UIViewController {
+class MineViewController: ItemsViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Mine"
+    }
+    
+    override func getItems() {
+        items = Item.mineItems()
+    }
+}
+
+class ItemsViewController: UIViewController {
     
     var items:Results<Item>?
     let tableNode = ASTableNode()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Mine"
         view.addSubnode(tableNode)
         tableNode.delegate = self
         tableNode.dataSource = self
@@ -28,16 +38,20 @@ class MineViewController: UIViewController {
         super.viewWillLayoutSubviews()
         tableNode.frame = view.bounds
     }
+    
+    func getItems() {
+        //items = nil
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        items = Item.mineItems()
+        getItems()
         tableNode.reloadData()
     }
     
 }
 
-extension MineViewController: ASTableDataSource, ASTableDelegate {
+extension ItemsViewController: ASTableDataSource, ASTableDelegate {
     func numberOfSections(in tableNode: ASTableNode) -> Int {
         return 1
     }

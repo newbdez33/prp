@@ -8,12 +8,14 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
-
+class HistoryViewController: ItemsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "History"
+    }
+    
+    override func getItems() {
+        items = Item.allItems()
     }
 
 }

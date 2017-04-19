@@ -105,4 +105,10 @@ extension Item {
         let result = realm.objects(Item.self).filter(predicate) as Results<Item>
         return result
     }
+    
+    static func allItems() -> Results<Item> {
+        let realm = try! Realm()
+        let result = realm.objects(Item.self)
+        return result
+    }
 }
