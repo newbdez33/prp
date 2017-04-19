@@ -31,6 +31,7 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
         self.scrollNode.automaticallyManagesContentSize = true
         self.view.backgroundColor = UIColor.white
+        scrollNode.style.preferredSize = self.view.frame.size
         self.view.addSubnode(scrollNode)
         loadProductView()
     }
