@@ -33,6 +33,7 @@
 		CE8A80DE1EA3A8730021C69B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */; };
 		CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */; };
 		CE8A80E11EA3AA150021C69B /* UIFont+PR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */; };
+		CE8A80EA1EA7879F0021C69B /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80E91EA7879F0021C69B /* ProductViewController.swift */; };
 		CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEB0E4291E92761100A7B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		CE8A80DF1EA3AA150021C69B /* UIFont+PR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+PR.swift"; sourceTree = "<group>"; };
+		CE8A80E91EA7879F0021C69B /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		CEA50FF01EA137480060772D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 				CE8A80D31EA381A80021C69B /* MineViewController.swift */,
 				CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */,
 				CE8A80DD1EA3A8730021C69B /* HistoryViewController.swift */,
+				CE8A80E91EA7879F0021C69B /* ProductViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */,
 				CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
+				CE8A80EA1EA7879F0021C69B /* ProductViewController.swift in Sources */,
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
 				CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,

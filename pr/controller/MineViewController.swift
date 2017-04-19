@@ -70,4 +70,9 @@ extension MineViewController: ASTableDataSource, ASTableDelegate {
         return cellNodeBlock
     }
     
+    func tableNode(_ tableNode: ASTableNode, didSelectRowAt indexPath: IndexPath) {
+        let item = items![indexPath.row]
+        let vc = ProductViewController(item)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

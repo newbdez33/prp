@@ -28,7 +28,13 @@ struct PRConfig {
     }
     
     static func setupUI() {
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.prDefault(size: 15)]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.prDefault(size: 15), NSForegroundColorAttributeName:UIColor.prBlack()]
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), for:UIBarMetrics.default)
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.prBlack()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UIBarButtonItem.appearance().setBackButtonBackgroundImage(UIImage(named: "back")!, for: .normal, barMetrics: .default)
     }
 
 }
