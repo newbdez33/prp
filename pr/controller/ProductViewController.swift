@@ -54,6 +54,10 @@ class ProductViewController: UIViewController {
         resizeNodes(size:self.view.frame.size)
         scrollNode.addSubnode(productNode)
         self.bindItem()
+        
+        Price.requestHistoryWithId(p: item.asin) { (items:[Price]) in
+            self.productNode.trendingNode.bind(items)
+        }
     }
     
     func bindItem() {
@@ -61,6 +65,7 @@ class ProductViewController: UIViewController {
         self.productNode.bindItem(item)
         //self.productNode.setNeedsLayout()
         self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ProductViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
+        
     }
     
     func saveItemAction(_ sender:ASButtonNode) {

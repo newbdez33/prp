@@ -48,17 +48,6 @@ class PriceNode: ASDisplayNode {
         return chartView
     }
     
-    let lineChartNode = ASDisplayNode { () -> UIView in
-        let chartView = LineChartView()
-        chartView.noDataText = ""
-        chartView.chartDescription?.enabled = false
-        chartView.drawGridBackgroundEnabled = false
-        chartView.dragEnabled = false
-        chartView.setScaleEnabled(false)
-        chartView.pinchZoomEnabled = false
-        
-        return chartView
-    }
     let saveButton = ASButtonNode()
     
     
@@ -71,7 +60,7 @@ class PriceNode: ASDisplayNode {
     override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
 
         saveButton.style.preferredSize = CGSize(width: PriceNode.nodeHeight, height: PriceNode.nodeHeight)
-        let stack = ASStackLayoutSpec(direction: .horizontal, spacing: 0, justifyContent: .center, alignItems: .center, children: [precentBarChartNode, saveButton])
+        let stack = ASStackLayoutSpec(direction: .horizontal, spacing: 0, justifyContent: .start, alignItems: .center, children: [precentBarChartNode, saveButton])
         precentBarChartNode.style.flexGrow = 1
         precentBarChartNode.style.flexShrink = 1
         return ASInsetLayoutSpec(insets: UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8), child: stack)
