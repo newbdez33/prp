@@ -19,6 +19,7 @@ class InformationNode: ASDisplayNode {
     override init() {
         super.init()
         titleNode.truncationMode = .byTruncatingMiddle
+        imageNode.contentMode = .scaleAspectFit
         addSubnode(imageNode)
         addSubnode(titleNode)
     }
