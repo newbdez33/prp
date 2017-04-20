@@ -23,6 +23,7 @@ class TrendingNode: ASDisplayNode {
         chartView.pinchZoomEnabled = false
         chartView.legend.enabled = false
         chartView.rightAxis.enabled = false
+        chartView.leftAxis.gridColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
         
         chartView.xAxis.enabled = true
         chartView.xAxis.labelPosition = .bottom
@@ -30,7 +31,8 @@ class TrendingNode: ASDisplayNode {
         chartView.xAxis.drawAxisLineEnabled = false
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.xAxis.granularity = 1
-        chartView.leftAxis.xOffset = 0
+        chartView.xAxis.xOffset = 5
+        chartView.xAxis.avoidFirstLastClippingEnabled = true
         return chartView
     }
     
@@ -62,18 +64,34 @@ extension TrendingNode {
         addSubnode(titleNode)
         
         var vals:[ChartDataEntry] = []
-        for p in prices {
-            let d = ChartDataEntry(x: Double(p.t), y: Double(p.price))
+        var xvals:[String] = []
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "M.d"
+        for (index, p) in prices.enumerated() {
+            let d = ChartDataEntry(x: Double(index), y: Double(p.price))
+            let dt = Date(timeIntervalSince1970: TimeInterval(p.t))
+            xvals.append(dayTimePeriodFormatter.string(from: dt))
             vals.append(d)
         }
+        
+        //last item
+        let l = ChartDataEntry(x: Double(prices.count), y: Double(prices.last!.price))
+        vals.append(l)
+        xvals.append("")
+        
+        //TODO padding dates to 30 days
+        
         let set1 = LineChartDataSet(values: vals, label: "set1")
         set1.setColor(UIColor.prBlack())
         set1.lineWidth = 1.0
         set1.drawCirclesEnabled = false
         set1.drawFilledEnabled = true
         set1.mode = .stepped
+        
         let chartView = lineChartNode.view as! LineChartView
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xvals)
         chartView.data = LineChartData(dataSets: [set1])
+        
         addSubnode(lineChartNode)
         
     }
