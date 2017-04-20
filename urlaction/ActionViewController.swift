@@ -146,6 +146,10 @@ class ActionViewController: UIViewController {
         self.productNode.bindItem(item)
         //self.productNode.setNeedsLayout()
         self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ActionViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
+        
+        Price.requestHistoryWithId(p: item.asin) { (items:[Price]) in
+            self.productNode.trendingNode.bind(items)
+        }
     }
     
     func saveItemAction(_ sender:ASButtonNode) {

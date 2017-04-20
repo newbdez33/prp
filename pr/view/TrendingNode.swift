@@ -62,7 +62,15 @@ extension TrendingNode {
         
         titleNode.attributedText = TrendingNode.getTitleString(string: "Trending")
         addSubnode(titleNode)
+        addSubnode(lineChartNode)
+        updateChart(prices)
         
+    }
+    
+    func updateChart(_ prices:[Price]) {
+        if prices.count <= 0 {
+            return
+        }
         var vals:[ChartDataEntry] = []
         var xvals:[String] = []
         let dayTimePeriodFormatter = DateFormatter()
@@ -91,8 +99,6 @@ extension TrendingNode {
         let chartView = lineChartNode.view as! LineChartView
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xvals)
         chartView.data = LineChartData(dataSets: [set1])
-        
-        addSubnode(lineChartNode)
-        
+
     }
 }

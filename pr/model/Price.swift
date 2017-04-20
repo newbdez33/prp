@@ -17,10 +17,6 @@ class Price: Object {
     dynamic var price:Float = 0
     dynamic var t:Int = 0
     
-    override public static func primaryKey() -> String? {
-        return "asin"
-    }
-    
     convenience init(json: JSON) {
         self.init()
         
@@ -41,6 +37,16 @@ extension Price {
             var ret:[Price] = []
             for j in json {
                 ret.append(Price(json:j))
+            }
+            let item = Item.find(byId: p)
+            if item != nil {
+                let realm = try! Realm()
+                try! realm.write {
+                    item!.history.removeAll()
+                    for p in ret {
+                        item!.history.append(p)
+                    }
+                }
             }
             handler(ret)
         }

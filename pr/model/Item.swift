@@ -19,9 +19,12 @@ class Item: Object {
     dynamic var price:Float = 0
     dynamic var highest:Float = 0
     dynamic var lowest:Float = 0
+    dynamic var url:String = ""
+    dynamic var aac:String = ""
     
     //local
     dynamic var isTracking:Bool = false
+    var history = List<Price>()
     
     override public static func primaryKey() -> String? {
         return "asin"
@@ -31,26 +34,14 @@ class Item: Object {
         self.init()
         
         asin        = "asin" <~~ json ?? ""
+        url         = "url" <~~ json ?? ""
+        aac         = "aac" <~~ json ?? ""
         photo       = "photo" <~~ json ?? ""
         title       = "title" <~~ json ?? ""
         currency    = "currency" <~~ json ?? ""
-        if let priceRaw: NSString = "price" <~~ json {
-            price = priceRaw.floatValue
-        }else {
-            price = 0
-        }
-        
-        if let priceRaw: NSString = "highest" <~~ json {
-            highest = priceRaw.floatValue
-        }else {
-            highest = 0
-        }
-        
-        if let priceRaw: NSString = "lowest" <~~ json {
-            lowest = priceRaw.floatValue
-        }else {
-            lowest = 0
-        }
+        price       = "price" <~~ json ?? 0
+        highest       = "highest" <~~ json ?? 0
+        lowest       = "lowest" <~~ json ?? 0
         
     }
     
