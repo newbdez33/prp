@@ -11,13 +11,28 @@ import RealmSwift
 import AsyncDisplayKit
 
 class MineViewController: ItemsViewController {
+    let topseg = UISegmentedControl(items: ["Favorites", "History"])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Mine"
+        topseg.selectedSegmentIndex = 0
+        topseg.addTarget(self, action: #selector(MineViewController.segmentChanged(sender:)), for: .valueChanged)
+        self.navigationItem.titleView = topseg
     }
     
     override func getItems() {
-        items = Item.mineItems()
+        if topseg.selectedSegmentIndex == 0 {
+            items = Item.mineItems()
+        }else {
+            items = Item.allItems()
+        }
+        tableNode.reloadData()
+    }
+    
+    func segmentChanged(sender:UISegmentedControl) {
+        getItems()
     }
 }
 
@@ -46,7 +61,6 @@ class ItemsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getItems()
-        tableNode.reloadData()
     }
     
 }
