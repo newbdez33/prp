@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzS-E3-HUA">
-                                <rect key="frame" x="20" y="284" width="335" height="35.5"/>
-                                <string key="text">PriceBot can only be used 
-within Amazon URLs.</string>
+                                <rect key="frame" x="20" y="284.5" width="335" height="35.5"/>
+                                <string key="text">Price Bot only works with 
+Amazon URLs for now.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

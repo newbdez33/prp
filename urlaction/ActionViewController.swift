@@ -109,6 +109,7 @@ class ActionViewController: UIViewController {
                 }
                 
             }else {
+                self.emptyMessageLabel.isHidden = false
                 self.spinner.dismiss()
             }
             
