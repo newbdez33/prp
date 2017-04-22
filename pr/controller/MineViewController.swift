@@ -63,6 +63,30 @@ class ItemsViewController: UIViewController {
         getItems()
     }
     
+    func infoAction(sender:ASButtonNode) {
+        if items == nil {
+            return
+        }
+        
+        let buttonPosition = sender.view.convert(CGPoint.zero, to: tableNode.view)
+        guard let index = tableNode.indexPathForRow(at: buttonPosition) else {
+            return
+        }
+        
+        if index.row >= items!.count {
+            return
+        }
+        let item = items![index.row]
+        
+        guard let url = URL(string:item.url) else {
+            return
+        }
+        let urlToShare = [ item.title, url ] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = sender.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension ItemsViewController: ASTableDataSource, ASTableDelegate {
@@ -86,12 +110,13 @@ extension ItemsViewController: ASTableDataSource, ASTableDelegate {
         // this may be executed on a background thread - it is important to make sure it is thread safe
         let cellNodeBlock = { () -> ASCellNode in
             
-            let cell = ASTextCellNode()
+            let cell = ItemCellNode()
             let realm = try! Realm()
             guard let item = realm.resolve(itemRef) else {
                 return cell
             }
-            cell.textNode.attributedText = InformationNode.getTitleString(string: item.title)
+            cell.bind(item: item)
+            cell.infoButton.addTarget(self, action: #selector(ItemsViewController.infoAction(sender:)), forControlEvents: .touchUpInside)
             return cell
         }
         

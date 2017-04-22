@@ -69,6 +69,19 @@ extension Item {
             realm.add(self, update: true)
         }
     }
+    
+    func findLastChangedPrice() -> Float {
+        if self.history.count < 2 {
+            return self.price
+        }
+        for p in self.history.reversed() {
+            if p.price != price {
+                return p.price
+            }
+        }
+        
+        return price
+    }
 }
 
 extension Item {
