@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import AsyncDisplayKit
+import TUSafariActivity
 
 class MineViewController: ItemsViewController {
     let topseg = UISegmentedControl(items: ["Favorites", "History"])
@@ -82,7 +83,7 @@ class ItemsViewController: UIViewController {
             return
         }
         let urlToShare = [ item.title, url ] as [Any]
-        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [TUSafariActivity()])
         activityViewController.popoverPresentationController?.sourceView = sender.view
         self.present(activityViewController, animated: true, completion: nil)
     }

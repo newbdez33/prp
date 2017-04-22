@@ -11,10 +11,11 @@ def shared_pods
     pod 'JHSpinner'
     pod 'Charts'
     pod 'RealmSwift'
-    pod 'ESTabBarController-swift'
 end
 
 target 'pr' do
+    pod 'TUSafariActivity'
+    pod 'ESTabBarController-swift'
     shared_pods
 end
 

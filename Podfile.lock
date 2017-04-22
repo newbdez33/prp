@@ -34,6 +34,7 @@ PODS:
     - PINRemoteImage/iOS (= 3.0.0-beta.9)
     - PINRemoteImage/PINCache
     - Texture/Core
+  - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - RealmSwift
   - RxSwift (~> 3.0)
   - Texture
+  - TUSafariActivity
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -58,7 +60,8 @@ SPEC CHECKSUMS:
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   Texture: de523401d6c296e63249021246a95bf7f90b3d9c
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 0e6855975378e7c3a0ee599c5891f20c926082d4
+PODFILE CHECKSUM: 4be51c7e9025ea37228899c4729d64a2367139e6
 
 COCOAPODS: 1.2.1
