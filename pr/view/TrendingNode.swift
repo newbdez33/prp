@@ -18,9 +18,12 @@ class TrendingNode: ASDisplayNode {
         chartView.noDataText = ""
         chartView.chartDescription?.enabled = false
         chartView.drawGridBackgroundEnabled = false
-        chartView.dragEnabled = false
+        chartView.dragEnabled = true
         chartView.setScaleEnabled(false)
-        chartView.pinchZoomEnabled = false
+        chartView.pinchZoomEnabled = true
+        chartView.scaleXEnabled = true
+        chartView.scaleYEnabled = false
+        chartView.doubleTapToZoomEnabled = false
         chartView.legend.enabled = false
         chartView.rightAxis.enabled = false
         chartView.leftAxis.gridColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1.0)
@@ -32,7 +35,12 @@ class TrendingNode: ASDisplayNode {
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.xAxis.granularity = 1
         chartView.xAxis.xOffset = 5
-        chartView.xAxis.avoidFirstLastClippingEnabled = true
+        chartView.xAxis.avoidFirstLastClippingEnabled = false
+        
+        let marker = PriceMarker(color:UIColor.clear, font:UIFont(name: "HelveticaNeue-Light", size: 8)!, textColor:UIColor.prBlack(), insets:UIEdgeInsetsMake(0, 0, 0, 0))
+        marker.chartView = chartView
+        marker.minimumSize = CGSize(width: 80, height: 20)
+        chartView.marker = marker
         return chartView
     }
     
@@ -76,7 +84,7 @@ extension TrendingNode {
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = "M.d"
         for (index, p) in prices.enumerated() {
-            let d = ChartDataEntry(x: Double(index), y: Double(p.price))
+            let d = ChartDataEntry(x: Double(index), y: Double(p.price), data:p)
             let dt = Date(timeIntervalSince1970: TimeInterval(p.t))
             xvals.append(dayTimePeriodFormatter.string(from: dt))
             vals.append(d)
@@ -84,6 +92,7 @@ extension TrendingNode {
         
         //last item
         let l = ChartDataEntry(x: Double(prices.count), y: Double(prices.last!.price))
+        
         vals.append(l)
         xvals.append("")
         
@@ -95,10 +104,146 @@ extension TrendingNode {
         set1.drawCirclesEnabled = false
         set1.drawFilledEnabled = true
         set1.mode = .stepped
+        set1.drawValuesEnabled = false
+        set1.drawVerticalHighlightIndicatorEnabled = false
+        set1.drawHorizontalHighlightIndicatorEnabled = false
         
         let chartView = lineChartNode.view as! LineChartView
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: xvals)
         chartView.data = LineChartData(dataSets: [set1])
 
+    }
+    
+}
+
+
+class PriceMarker: MarkerImage
+{
+    open var color: UIColor?
+    open var arrowSize = CGSize(width: 15, height: 11)
+    open var font: UIFont?
+    open var textColor: UIColor?
+    open var insets = UIEdgeInsets()
+    open var minimumSize = CGSize()
+    
+    fileprivate var labelns: NSString?
+    fileprivate var _labelSize: CGSize = CGSize()
+    fileprivate var _paragraphStyle: NSMutableParagraphStyle?
+    fileprivate var _drawAttributes = [String : AnyObject]()
+    
+    public init(color: UIColor, font: UIFont, textColor: UIColor, insets: UIEdgeInsets)
+    {
+        super.init()
+        
+        self.color = color
+        self.font = font
+        self.textColor = textColor
+        self.insets = insets
+        
+        _paragraphStyle = NSParagraphStyle.default.mutableCopy() as? NSMutableParagraphStyle
+        _paragraphStyle?.alignment = .center
+    }
+    
+    open override func offsetForDrawing(atPoint point: CGPoint) -> CGPoint
+    {
+        let size = self.size
+        var point = point
+        point.x -= size.width / 2.0
+        point.y -= size.height
+        return super.offsetForDrawing(atPoint: point)
+    }
+    
+    open override func draw(context: CGContext, point: CGPoint)
+    {
+        if labelns == nil
+        {
+            return
+        }
+        
+        let offset = self.offsetForDrawing(atPoint: point)
+        let size = self.size
+        
+        var rect = CGRect(
+            origin: CGPoint(
+                x: point.x + offset.x,
+                y: point.y + offset.y),
+            size: size)
+        rect.origin.x -= size.width / 2.0
+        rect.origin.y -= size.height
+        
+        context.saveGState()
+        
+        if let color = color
+        {
+            context.setFillColor(color.cgColor)
+            context.beginPath()
+            context.move(to: CGPoint(
+                x: rect.origin.x,
+                y: rect.origin.y))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x + rect.size.width,
+                y: rect.origin.y))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x + rect.size.width,
+                y: rect.origin.y + rect.size.height - arrowSize.height))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x + (rect.size.width + arrowSize.width) / 2.0,
+                y: rect.origin.y + rect.size.height - arrowSize.height))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x + rect.size.width / 2.0,
+                y: rect.origin.y + rect.size.height))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x + (rect.size.width - arrowSize.width) / 2.0,
+                y: rect.origin.y + rect.size.height - arrowSize.height))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x,
+                y: rect.origin.y + rect.size.height - arrowSize.height))
+            context.addLine(to: CGPoint(
+                x: rect.origin.x,
+                y: rect.origin.y))
+            context.fillPath()
+        }
+        
+        rect.origin.y += self.insets.top
+        rect.size.height -= self.insets.top + self.insets.bottom
+        
+        UIGraphicsPushContext(context)
+        
+        labelns?.draw(in: rect, withAttributes: _drawAttributes)
+        
+        UIGraphicsPopContext()
+        
+        context.restoreGState()
+    }
+    
+    open override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+
+        guard let p = entry.data as? Price else {
+            setLabel("")
+            return
+        }
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "yyyy-MM-dd"
+        let dt = Date(timeIntervalSince1970: TimeInterval(p.t))
+        setLabel( p.currency + String(entry.y) + " " + dayTimePeriodFormatter.string(from: dt))
+    }
+    
+    open func setLabel(_ label: String)
+    {
+        labelns = label as NSString
+        
+        _drawAttributes.removeAll()
+        _drawAttributes[NSFontAttributeName] = self.font
+        _drawAttributes[NSParagraphStyleAttributeName] = _paragraphStyle
+        _drawAttributes[NSForegroundColorAttributeName] = self.textColor
+        
+        _labelSize = labelns?.size(attributes: _drawAttributes) ?? CGSize.zero
+        
+        var size = CGSize()
+        size.width = _labelSize.width + self.insets.left + self.insets.right
+        size.height = _labelSize.height + self.insets.top + self.insets.bottom
+        size.width = max(minimumSize.width, size.width)
+        size.height = max(minimumSize.height, size.height)
+        self.size = size
     }
 }
