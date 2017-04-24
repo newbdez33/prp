@@ -10,6 +10,7 @@ import UIKit
 import JHSpinner
 import AsyncDisplayKit
 import RealmSwift
+import TUSafariActivity
 
 class ProductViewController: UIViewController {
 
@@ -29,11 +30,26 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarItem()
         self.scrollNode.automaticallyManagesContentSize = true
         self.view.backgroundColor = UIColor.white
         scrollNode.style.preferredSize = self.view.frame.size
         self.view.addSubnode(scrollNode)
         loadProductView()
+    }
+    
+    func addNavigationBarItem() {
+        let rightBtn = UIButton(type: UIButtonType.custom)
+        rightBtn.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        rightBtn.setImage(UIImage(named: "share"), for: UIControlState())
+        rightBtn.addTarget(self, action: #selector(ProductViewController.shareAction(_:)), for: UIControlEvents.touchUpInside)
+        let rightItem = UIBarButtonItem(customView: rightBtn)
+        
+        let spacerRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+        spacerRight.width = -5
+        
+        self.navigationItem.rightBarButtonItems = [spacerRight, rightItem]
+
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -78,4 +94,17 @@ class ProductViewController: UIViewController {
         item.saveTracking(tracking: sender.isSelected)
     }
 
+    func shareAction(_ sender:UIButton) {
+        if item == nil {
+            return
+        }
+        
+        guard let url = URL(string:item.url) else {
+            return
+        }
+        let urlToShare = [ item.title, url ] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [TUSafariActivity()])
+        activityViewController.popoverPresentationController?.sourceView = sender
+        self.present(activityViewController, animated: true, completion: nil)
+    }
 }
