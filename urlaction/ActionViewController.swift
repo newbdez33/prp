@@ -19,11 +19,12 @@ class ActionViewController: UIViewController {
     @IBOutlet weak var localNavigationBar: UINavigationBar!
     @IBOutlet weak var scrollView: UIScrollView!
     var productNode:ProductNode! = ProductNode()
-    
+
     var spinner:JHSpinnerView!
     var triedCount:Int = 0
     
     var asin:String?
+    var item:Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,16 @@ class ActionViewController: UIViewController {
         
         self.title = "Price Bot"
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.92)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        addNavigationBarItem()
+        PRConfig.setupUI()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.prBlack()
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 15)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor.prBlack(), NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 15)!]
+        
         setNeedsStatusBarAppearanceUpdate()
+        
         self.extendedLayoutIncludesOpaqueBars = false
         self.edgesForExtendedLayout = .init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false
@@ -58,12 +64,31 @@ class ActionViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { context in
             self.productNode.frame = CGRect(x: 0, y: 0, width: size.width, height: self.productNode.heightOfContents())
             self.scrollView.contentSize = CGSize(width: size.width, height: self.productNode.heightOfContents())
         })
+    }
+    
+    func addNavigationBarItem() {
+        let rightBtn = UIButton(type: UIButtonType.custom)
+        rightBtn.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        rightBtn.setImage(UIImage(named: "share"), for: UIControlState())
+        rightBtn.addTarget(self, action: #selector(self.shareAction(_:)), for: UIControlEvents.touchUpInside)
+        let rightItem = UIBarButtonItem(customView: rightBtn)
+        
+        let spacerRight = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.fixedSpace, target: nil, action: nil)
+        spacerRight.width = -5
+        
+        self.navigationItem.rightBarButtonItems = [spacerRight, rightItem]
+        
     }
     
     func loadNavigationItems() {
@@ -147,7 +172,7 @@ class ActionViewController: UIViewController {
         self.productNode.bindItem(item)
         //self.productNode.setNeedsLayout()
         self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ActionViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
-        
+        self.item = item
         Price.requestHistoryWithId(p: item.asin) { (items:[Price]) in
             self.productNode.trendingNode.bind(items)
         }
@@ -173,6 +198,24 @@ class ActionViewController: UIViewController {
         //let realm = try! Realm()
         //print(realm.objects(Item.self))
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
+    }
+    
+    func shareAction(_ sender:UIButton) {
+        if item == nil {
+            return
+        }
+        
+        guard let url = URL(string:item!.url) else {
+            return
+        }
+        let urlToShare = [ item!.title, url ] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [])
+        activityViewController.popoverPresentationController?.sourceView = sender
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
 }
