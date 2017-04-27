@@ -21,6 +21,7 @@ class Item: Object {
     dynamic var lowest:Float = 0
     dynamic var url:String = ""
     dynamic var aac:String = ""
+    dynamic var clean_url:String = ""
     
     //local
     dynamic var isTracking:Bool = false
@@ -35,6 +36,7 @@ class Item: Object {
         
         asin        = "asin" <~~ json ?? ""
         url         = "url" <~~ json ?? ""
+        clean_url   = "clean_url" <~~ json ?? ""
         aac         = "aac" <~~ json ?? ""
         photo       = "photo" <~~ json ?? ""
         title       = "title" <~~ json ?? ""

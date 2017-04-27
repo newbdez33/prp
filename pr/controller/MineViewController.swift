@@ -79,8 +79,11 @@ class ItemsViewController: UIViewController {
         }
         let item = items![index.row]
         
-        guard let url = URL(string:item.url) else {
+        guard var url = URL(string:item.url) else {
             return
+        }
+        if let clean_url = URL(string:item.clean_url) {
+            url = clean_url
         }
         let urlToShare = [ item.title, url ] as [Any]
         let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [TUSafariActivity()])
