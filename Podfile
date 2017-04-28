@@ -17,6 +17,7 @@ target 'pr' do
     pod 'TUSafariActivity'
     pod 'ESTabBarController-swift'
     pod 'Eureka'
+    pod 'OneStore'
     shared_pods
 end
 
