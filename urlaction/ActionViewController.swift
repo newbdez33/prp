@@ -123,7 +123,7 @@ class ActionViewController: UIViewController {
                 
                 if item!.title != "" {
                     //self.title = item!.title
-                    item!.save()
+                    item!.add()
                     self.bindItem(item!)
                     self.spinner.dismiss()
                 }else {
@@ -160,7 +160,7 @@ class ActionViewController: UIViewController {
                 }
                 return
             }
-            item!.save()
+            item!.add()
             //self.title = item!.title
             self.bindItem(item!)
             self.spinner.dismiss()

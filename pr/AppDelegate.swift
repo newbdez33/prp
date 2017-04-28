@@ -6,6 +6,7 @@
 //  Copyright © 2017 Salmonapps. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import RealmSwift
 import ESTabBarController_swift
@@ -14,7 +15,6 @@ import ESTabBarController_swift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -42,7 +42,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            for i in Item.allItems() {
+                let gap = Date().timeIntervalSince1970 - Double(i.updated_at)
+                if gap > 3600 * 12 {
+                    Item.requestWithId(p:i.asin, handler: { (item:Item?) in
+                        if item == nil {
+                            return
+                        }
+                        item!.update()
+                    })
+                }
+            }
+            
+        }
+    }
 
 }
 

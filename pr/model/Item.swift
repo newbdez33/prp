@@ -22,6 +22,8 @@ class Item: Object {
     dynamic var url:String = ""
     dynamic var aac:String = ""
     dynamic var clean_url:String = ""
+    dynamic var created_at:Int = 0
+    dynamic var updated_at:Int = 0
     
     //local
     dynamic var isTracking:Bool = false
@@ -42,8 +44,10 @@ class Item: Object {
         title       = "title" <~~ json ?? ""
         currency    = "currency" <~~ json ?? ""
         price       = "price" <~~ json ?? 0
-        highest       = "highest" <~~ json ?? 0
-        lowest       = "lowest" <~~ json ?? 0
+        highest     = "highest" <~~ json ?? 0
+        lowest      = "lowest" <~~ json ?? 0
+        created_at  = "created_at" <~~ json ?? 0
+        updated_at  = "updated_at" <~~ json ?? 0
         
     }
     
@@ -56,7 +60,7 @@ extension Item {
         return realm.objects(Item.self).filter("asin = %@", pid).first
     }
     
-    func save() {
+    func add() {
         let realm = try! Realm()
         
         try! realm.write {
@@ -64,11 +68,30 @@ extension Item {
         }
     }
     
+    func update() {
+        guard let old = Item.find(byId: self.asin) else {
+            return
+        }
+        let realm = try! Realm()
+        try! realm.write {
+            old.updated_at = Int(Date().timeIntervalSince1970)
+            old.price = self.price
+            old.highest = self.highest
+            old.lowest = self.lowest
+            old.photo = self.photo
+            old.title = self.title
+            old.currency = self.currency
+            old.aac = self.aac
+            old.clean_url = self.clean_url
+            old.url = self.url
+        }
+    }
+    
     func saveTracking(tracking:Bool) {
         let realm = try! Realm()
         try! realm.write {
             self.isTracking = tracking
-            realm.add(self, update: true)
+            //realm.add(self, update: true)
         }
     }
     
