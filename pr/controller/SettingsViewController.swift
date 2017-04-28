@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import Eureka
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Settings"
+        title = "Settings"
+        form +++
+            Section("PRICE DROP NOTIFICATION")
+            <<<
+            SwitchRow("Enable price drop notification") {
+                $0.title = $0.tag
+            }.onChange { [weak self] row in
+                    //
+            }
     }
 
 }
