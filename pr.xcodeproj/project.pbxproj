@@ -24,6 +24,10 @@
 		CE54CB061E9257AF000CC3E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CB041E9257AF000CC3E8 /* MainInterface.storyboard */; };
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE65C8521EB5BDED00B39752 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
+		CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
+		CE65C8571EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
+		CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
+		CE65C85A1EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D31EA381A80021C69B /* MineViewController.swift */; };
@@ -91,6 +95,8 @@
 		CE54CB0F1E925C8E000CC3E8 /* urlaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urlaction.entitlements; sourceTree = "<group>"; };
 		CE54CB101E925E44000CC3E8 /* pr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pr.entitlements; sourceTree = "<group>"; };
 		CE65C8511EB5BDED00B39752 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
+		CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowtoViewController.swift; sourceTree = "<group>"; };
+		CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSchemesViewController.swift; sourceTree = "<group>"; };
 		CE8A80CF1EA352610021C69B /* PRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRConfig.swift; sourceTree = "<group>"; };
 		CE8A80D31EA381A80021C69B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		CE8A80D51EA39CC70021C69B /* PRTabbarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarItemView.swift; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 				CE8A80D31EA381A80021C69B /* MineViewController.swift */,
 				CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */,
 				CE8A80E91EA7879F0021C69B /* ProductViewController.swift */,
+				CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */,
+				CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -456,6 +464,8 @@
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
 				CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
+				CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
+				CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */,
 				CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */,
 				CE8A80EF1EA802D00021C69B /* Price.swift in Sources */,
 				CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */,
@@ -473,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8A80E11EA3AA150021C69B /* UIFont+PR.swift in Sources */,
+				CE65C85A1EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
 				CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */,
 				CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */,
@@ -480,6 +491,7 @@
 				CE3259371E9F99F6005E5768 /* Item.swift in Sources */,
 				CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */,
 				CE8A80DA1EA3A16F0021C69B /* UIColor+PR.swift in Sources */,
+				CE65C8571EB60CEB00B39752 /* HowtoViewController.swift in Sources */,
 				CE8A80F01EA802D00021C69B /* Price.swift in Sources */,
 				CE32593D1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE32593A1EA0BE4C005E5768 /* PriceNode.swift in Sources */,
