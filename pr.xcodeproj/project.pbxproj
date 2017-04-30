@@ -23,6 +23,7 @@
 		CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CB021E9257AF000CC3E8 /* ActionViewController.swift */; };
 		CE54CB061E9257AF000CC3E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CB041E9257AF000CC3E8 /* MainInterface.storyboard */; };
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE65C8521EB5BDED00B39752 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D31EA381A80021C69B /* MineViewController.swift */; };
@@ -89,6 +90,7 @@
 		CE54CB071E9257AF000CC3E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE54CB0F1E925C8E000CC3E8 /* urlaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urlaction.entitlements; sourceTree = "<group>"; };
 		CE54CB101E925E44000CC3E8 /* pr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pr.entitlements; sourceTree = "<group>"; };
+		CE65C8511EB5BDED00B39752 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
 		CE8A80CF1EA352610021C69B /* PRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRConfig.swift; sourceTree = "<group>"; };
 		CE8A80D31EA381A80021C69B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		CE8A80D51EA39CC70021C69B /* PRTabbarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTabbarItemView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				CE3259351E9F99F6005E5768 /* Item.swift */,
 				CE8A80EE1EA802D00021C69B /* Price.swift */,
+				CE65C8511EB5BDED00B39752 /* Me.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */,
+				CE65C8521EB5BDED00B39752 /* Me.swift in Sources */,
 				CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 				CE8A80EA1EA7879F0021C69B /* ProductViewController.swift in Sources */,
