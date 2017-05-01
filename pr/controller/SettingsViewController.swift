@@ -57,7 +57,11 @@ class SettingsViewController: FormViewController {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
-            }
+            }.onCellSelection({ (cell, row) in
+                UIApplication.shared.open(URL(string: PRConfig.rateOnAppStoreURL)!, options: [:], completionHandler: { (success:Bool) in
+                    //
+                })
+            })
             <<< ButtonRow("Give us feedback") {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
@@ -95,9 +99,9 @@ class PRLogoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         let imageView = UIImageView(image: UIImage(named: "pr-banner"))
-        imageView.frame = CGRect(x: 0, y: 0, width: 320, height: 90)
+        imageView.frame = CGRect(x: 0, y: 0, width: 320, height: 80)
         imageView.autoresizingMask = .flexibleWidth
-        self.frame = CGRect(x: 0, y: 0, width: 320, height: 90)
+        self.frame = CGRect(x: 0, y: 0, width: 320, height: 80)
         imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
     }

@@ -13,6 +13,7 @@ let realmQueue = DispatchQueue(label: "com.podbean.realmQueue");
 
 struct PRConfig {
     static let appGroupID: String = "group.com.salmonapps.app.pr"
+    static let rateOnAppStoreURL: String = "itms-apps://itunes.apple.com/app/id1231974655?action=write-review"
     
     static func realmConfig() -> Realm.Configuration {
         // 默认将 Realm 放在 App Group 里
