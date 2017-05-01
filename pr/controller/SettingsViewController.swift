@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import MessageUI
 
 class SettingsViewController: FormViewController {
 
@@ -52,7 +53,9 @@ class SettingsViewController: FormViewController {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
-            }
+            }.onCellSelection({ (cell, row) in
+                //TODO share action
+            })
             <<< ButtonRow("Rate on App Store") {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
@@ -66,12 +69,28 @@ class SettingsViewController: FormViewController {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
-            }
+            }.onCellSelection({ [weak self] (cell, row) in
+                if MFMailComposeViewController.canSendMail() {
+                    let mail = MFMailComposeViewController()
+                    mail.mailComposeDelegate = self
+                    mail.setToRecipients(["newbdez33+pricebot.feedback@gmail.com"])
+                    mail.setSubject("Price Bot Feedback")
+                    mail.setMessageBody("", isHTML: false)  //TODO Log file sending
+                    
+                    self?.present(mail, animated: true)
+                } else {
+                    // show failure alert
+                }
+            })
             <<< ButtonRow("Visit our website") {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
-            }
+                }.onCellSelection({ (cell, row) in
+                    UIApplication.shared.open(URL(string: "http://www.salmonapps.com/#pricebot")!, options: [:], completionHandler: { (success:Bool) in
+                        //
+                    })
+                })
             +++
             Section() { section in
                 section.header = {
@@ -92,6 +111,12 @@ class SettingsViewController: FormViewController {
         }
     }
 
+}
+
+extension SettingsViewController : MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 }
 
 class PRLogoView: UIView {
