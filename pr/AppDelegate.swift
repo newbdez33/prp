@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import UserNotifications
 import RealmSwift
 import ESTabBarController_swift
 
@@ -38,7 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         PRConfig.setupUI()
-        Realm.Configuration.defaultConfiguration = PRConfig.realmConfig()        
+        Realm.Configuration.defaultConfiguration = PRConfig.realmConfig()
+        
+        UIApplication.shared.setMinimumBackgroundFetchInterval(PRConfig.updateInterval)
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
     
@@ -59,6 +63,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
     }
+    
+    // - MARK: Handle url schemes
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        //TODO
+        return false
+    }
+    
+    // - MARK: Background task
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        //TODO fetch new priecs
+        completionHandler(.noData)
+    }
+    
+}
 
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    // - MARK: Notification task
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("notification received.")
+    }
+    
 }
 

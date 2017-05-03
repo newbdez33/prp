@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import Eureka
 import MessageUI
 
@@ -26,8 +27,42 @@ class SettingsViewController: FormViewController {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
-            }.onChange { row in
-                Me.dropNotification.value = row.value
+                $0.value = Me.dropNotification.value
+                }.onChange { row in
+                
+                if row.value == true {
+                    let center = UNUserNotificationCenter.current()
+                    center.getNotificationSettings { (settings) in
+                        if settings.authorizationStatus != .authorized {
+                            
+                            //TODO show a nice dialog to user to accpet a notification alert
+                            center.requestAuthorization(options: [.sound, .alert, .badge], completionHandler: { (granted:Bool, error:Error?) in
+                                if granted == true {
+                                    Me.dropNotification.value = true
+                                }else {
+                                    
+                                    Me.dropNotification.value = false
+                                    DispatchQueue.main.async { [weak self] in
+                                        row.value = false
+                                        row.cell.switchControl?.isOn = false
+                                        row.updateCell()
+                                        
+                                        //TODO Replace with a nice dialog
+                                        let alert = UIAlertController(title: "Please enable app notification", message: "Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications.", preferredStyle: .alert)
+                                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                        self?.present(alert, animated: true, completion: nil)
+                                    }
+                                }
+                            })
+
+                        }else {
+                            //already authorized.
+                            Me.dropNotification.value = true
+                        }
+                    }
+                }else {
+                    Me.dropNotification.value = row.value
+                }
             }
             +++
             Section("USE PRICE BOT")

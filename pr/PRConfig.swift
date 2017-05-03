@@ -9,12 +9,12 @@
 import UIKit
 import RealmSwift
 
-let realmQueue = DispatchQueue(label: "com.podbean.realmQueue");
+let realmQueue = DispatchQueue(label: "com.salmonapps.pricebot.realmQueue");
 
 struct PRConfig {
     static let appGroupID: String = "group.com.salmonapps.app.pr"
     static let rateOnAppStoreURL: String = "itms-apps://itunes.apple.com/app/id1231974655?action=write-review"
-    
+    static let updateInterval: TimeInterval = 3600 * 60    //1 hour
     static func realmConfig() -> Realm.Configuration {
         // 默认将 Realm 放在 App Group 里
         let directory:URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: PRConfig.appGroupID)!
