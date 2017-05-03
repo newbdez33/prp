@@ -72,6 +72,11 @@ extension Item {
         guard let old = Item.find(byId: self.asin) else {
             return
         }
+        if self.price < old.price {
+            //handling Price drop
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PRICE_UPDATED"), object: self)
+            
+        }
         let realm = try! Realm()
         try! realm.write {
             old.updated_at = Int(Date().timeIntervalSince1970)
