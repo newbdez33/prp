@@ -89,7 +89,7 @@ class SettingsViewController: FormViewController {
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
             }.onCellSelection({ (cell, row) in
-                //TODO share action
+                self.shareAction()
             })
             <<< ButtonRow("Rate on App Store") {
                 $0.title = $0.tag
@@ -144,6 +144,15 @@ class SettingsViewController: FormViewController {
                     return header
                 }()
         }
+    }
+    
+    func shareAction() {
+
+        let url = URL(string:PRConfig.appStoreURL)
+        let urlToShare = [ UIApplication.shared.icon!, "Price Bot - Amazon price tracking tool!", url! ] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [])
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
 
 }
