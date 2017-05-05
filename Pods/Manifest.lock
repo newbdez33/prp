@@ -23,11 +23,11 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.9):
     - PINCache (= 3.0.1-beta.4)
     - PINRemoteImage/Core
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
   - RxSwift (3.2.0)
   - Texture (2.3):
     - Texture/PINRemoteImage (= 2.3)
@@ -37,6 +37,7 @@ PODS:
     - PINRemoteImage/PINCache
     - Texture/Core
   - TUSafariActivity (1.0.4)
+  - URLNavigator (1.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - RxSwift (~> 3.0)
   - Texture
   - TUSafariActivity
+  - URLNavigator (~> 1.2)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -62,12 +64,13 @@ SPEC CHECKSUMS:
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: e4e02e15a6f96cedbcef2abf1c9c1228dc9897d7
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   Texture: de523401d6c296e63249021246a95bf7f90b3d9c
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
+  URLNavigator: 3ff788c985a0aae654e7de4959c4b0ea8a45f022
 
-PODFILE CHECKSUM: 6eaf8fd6c0ac6420e3a81d845d91a989915e9b1f
+PODFILE CHECKSUM: 025c420fce11d5324f1c8e462d89bd2cb585e14f
 
 COCOAPODS: 1.2.1

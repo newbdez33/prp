@@ -18,6 +18,7 @@ target 'pr' do
     pod 'ESTabBarController-swift'
     pod 'Eureka'
     pod 'OneStore'
+    pod 'URLNavigator', '~> 1.2'
     shared_pods
 end
 
