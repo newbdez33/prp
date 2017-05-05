@@ -25,7 +25,6 @@
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE65C8521EB5BDED00B39752 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
 		CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
-		CE65C8571EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
 		CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
 		CE65C85A1EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
@@ -494,7 +493,6 @@
 				CE3259371E9F99F6005E5768 /* Item.swift in Sources */,
 				CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */,
 				CE8A80DA1EA3A16F0021C69B /* UIColor+PR.swift in Sources */,
-				CE65C8571EB60CEB00B39752 /* HowtoViewController.swift in Sources */,
 				CE8A80F01EA802D00021C69B /* Price.swift in Sources */,
 				CE32593D1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE32593A1EA0BE4C005E5768 /* PriceNode.swift in Sources */,

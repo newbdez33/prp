@@ -12,8 +12,13 @@ class HowtoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hidesBottomBarWhenPushed = true
         view.backgroundColor = UIColor.white
+        if UIApplication.shared.canOpenURL(NSURL(string: "com.amazon.mobile.shopping://")! as URL) {
+            print("YES")
+        }else {
+            print("NO")
+        }
     }
 
 }
