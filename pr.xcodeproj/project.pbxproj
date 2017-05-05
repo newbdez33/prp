@@ -26,7 +26,6 @@
 		CE65C8521EB5BDED00B39752 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
 		CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
 		CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
-		CE65C85A1EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80D31EA381A80021C69B /* MineViewController.swift */; };
@@ -41,6 +40,10 @@
 		CE8A80F01EA802D00021C69B /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80EE1EA802D00021C69B /* Price.swift */; };
 		CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
 		CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50FF01EA137480060772D /* BaseNavigationController.swift */; };
+		CEAEC3791EBCD49D006D3303 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAEC3741EBCD49D006D3303 /* CRNotificationsMedia.xcassets */; };
+		CEAEC37A1EBCD49D006D3303 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC3761EBCD49D006D3303 /* Colors.swift */; };
+		CEAEC37B1EBCD49D006D3303 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC3771EBCD49D006D3303 /* CRNotification.swift */; };
+		CEAEC37C1EBCD49D006D3303 /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC3781EBCD49D006D3303 /* CRNotifications.swift */; };
 		CEB0E4291E92761100A7B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
 		CED6C5251E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
@@ -105,6 +108,10 @@
 		CE8A80E91EA7879F0021C69B /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		CE8A80EE1EA802D00021C69B /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		CEA50FF01EA137480060772D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		CEAEC3741EBCD49D006D3303 /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
+		CEAEC3761EBCD49D006D3303 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CEAEC3771EBCD49D006D3303 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
+		CEAEC3781EBCD49D006D3303 /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotifications.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 		CEF248F11EAB8E4900989417 /* ItemCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +189,7 @@
 		CE54CAE91E925762000CC3E8 /* pr */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEC3711EBCD49D006D3303 /* vender */,
 				CE8A80D71EA3A12D0021C69B /* extension */,
 				CE8A80D21EA381780021C69B /* controller */,
 				CEA50FEF1EA137340060772D /* base */,
@@ -235,6 +243,41 @@
 				CEA50FF01EA137480060772D /* BaseNavigationController.swift */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		CEAEC3711EBCD49D006D3303 /* vender */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEC3721EBCD49D006D3303 /* CRNotifications */,
+			);
+			path = vender;
+			sourceTree = "<group>";
+		};
+		CEAEC3721EBCD49D006D3303 /* CRNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEC3731EBCD49D006D3303 /* Assets */,
+				CEAEC3751EBCD49D006D3303 /* Classes */,
+			);
+			path = CRNotifications;
+			sourceTree = "<group>";
+		};
+		CEAEC3731EBCD49D006D3303 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEC3741EBCD49D006D3303 /* CRNotificationsMedia.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CEAEC3751EBCD49D006D3303 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEC3761EBCD49D006D3303 /* Colors.swift */,
+				CEAEC3771EBCD49D006D3303 /* CRNotification.swift */,
+				CEAEC3781EBCD49D006D3303 /* CRNotifications.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		CED6C5231E93E4F9009589FA /* view */ = {
@@ -361,6 +404,7 @@
 			files = (
 				CE54CAF51E925762000CC3E8 /* LaunchScreen.storyboard in Resources */,
 				CE54CAF21E925762000CC3E8 /* Assets.xcassets in Resources */,
+				CEAEC3791EBCD49D006D3303 /* CRNotificationsMedia.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,11 +503,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */,
+				CEAEC37C1EBCD49D006D3303 /* CRNotifications.swift in Sources */,
+				CEAEC37A1EBCD49D006D3303 /* Colors.swift in Sources */,
 				CE65C8521EB5BDED00B39752 /* Me.swift in Sources */,
 				CEA50FF11EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE3259391EA0BE4C005E5768 /* PriceNode.swift in Sources */,
 				CE8A80EA1EA7879F0021C69B /* ProductViewController.swift in Sources */,
 				CE3259361E9F99F6005E5768 /* Item.swift in Sources */,
+				CEAEC37B1EBCD49D006D3303 /* CRNotification.swift in Sources */,
 				CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
@@ -485,7 +532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8A80E11EA3AA150021C69B /* UIFont+PR.swift in Sources */,
-				CE65C85A1EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
 				CE3259401EA0C079005E5768 /* InformationNode.swift in Sources */,
 				CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */,
 				CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */,
