@@ -11,21 +11,26 @@ import JHSpinner
 import AsyncDisplayKit
 import RealmSwift
 import TUSafariActivity
+import URLNavigator
 
-class ProductViewController: UIViewController {
+final class ProductViewController: UIViewController {
 
     var scrollNode = ASScrollNode()
     var productNode:ProductNode! = ProductNode()
     
     var spinner:JHSpinnerView!
     var triedCount:Int = 0
+    var item:Item?
+    let asin:String
     
-    var item:Item!
-    
-    convenience init(_ item:Item) {
-        self.init()
-        self.item = item
+    init(id: String) {
+        self.asin = id
+        super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -69,16 +74,28 @@ class ProductViewController: UIViewController {
         //API
         resizeNodes(size:self.view.frame.size)
         scrollNode.addSubnode(productNode)
-        self.bindItem()
+        
+        let item = Item.find(byId: asin)
+        if item == nil {
+            Item.requestWithId(p: asin, handler: { [weak self] (obj) in
+                if obj != nil {
+                    self?.bindItem(item: obj!)
+                }else {
+                    //TODO Handle error
+                }
+            })
+        }else {
+            self.bindItem(item: item!)
+        }
 
-        Price.requestHistoryWithId(p: item.asin) { (items:[Price]) in
+        Price.requestHistoryWithId(p: asin) { (items:[Price]) in
             //TODO only return extra items
             self.productNode.trendingNode.updateChart(items)
         }
     }
     
-    func bindItem() {
-        
+    func bindItem(item:Item) {
+        self.item = item
         self.productNode.bindItem(item)
         //self.productNode.setNeedsLayout()
         self.productNode.priceNode.saveButton.addTarget(self, action: #selector(ProductViewController.saveItemAction(_:)), forControlEvents: .touchUpInside)
@@ -91,7 +108,7 @@ class ProductViewController: UIViewController {
     
     func saveItemAction(_ sender:ASButtonNode) {
         sender.isSelected = !sender.isSelected
-        item.saveTracking(tracking: sender.isSelected)
+        item?.saveTracking(tracking: sender.isSelected)
     }
 
     func shareAction(_ sender:UIButton) {
@@ -99,15 +116,25 @@ class ProductViewController: UIViewController {
             return
         }
         
-        guard var url = URL(string:item.url) else {
+        guard var url = URL(string:item!.url) else {
             return
         }
-        if let clean_url = URL(string:item.clean_url) {
+        if let clean_url = URL(string:item!.clean_url) {
             url = clean_url
         }
-        let urlToShare = [ item.title, url ] as [Any]
+        let urlToShare = [ item!.title, url ] as [Any]
         let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [TUSafariActivity()])
         activityViewController.popoverPresentationController?.sourceView = sender
         self.present(activityViewController, animated: true, completion: nil)
+    }
+}
+
+extension ProductViewController: URLNavigable {
+    convenience init?(navigation: Navigation) {
+        guard let vcLink = navigation.values["id"] as? String else {
+            return nil
+        }
+        self.init(id: vcLink)
+        
     }
 }

@@ -129,7 +129,7 @@ extension ItemsViewController: ASTableDataSource, ASTableDelegate {
     
     func tableNode(_ tableNode: ASTableNode, didSelectRowAt indexPath: IndexPath) {
         let item = items![indexPath.row]
-        let vc = ProductViewController(item)
+        let vc = ProductViewController(id: item.asin)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

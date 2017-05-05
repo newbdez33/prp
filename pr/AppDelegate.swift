@@ -11,6 +11,7 @@ import UIKit
 import UserNotifications
 import RealmSwift
 import ESTabBarController_swift
+import URLNavigator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -44,6 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.setMinimumBackgroundFetchInterval(PRConfig.updateInterval)
         UNUserNotificationCenter.current().delegate = self
         registerPriceChangedNotification()
+        
+        //handle url scheme
+        NavigationMap.initialize()
+        if let URL = launchOptions?[.url] as? URL {
+            if Navigator.open(URL) {
+                Navigator.push(URL)
+            }
+        }
+        
         return true
     }
     
@@ -67,7 +77,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // - MARK: Handle url schemes
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        //TODO
+        if Navigator.open(url) {
+            NSLog("Navigator: Open \(url)")
+            return true
+        }
+        
+        if Navigator.push(url) != nil {
+            return true
+        }
+        
         return false
     }
     
@@ -143,4 +161,3 @@ extension UIApplication {
         return icon
     }
 }
-
