@@ -13,12 +13,18 @@ import TUSafariActivity
 
 class MineViewController: ItemsViewController {
     let topseg = UISegmentedControl(items: ["Favorites", "History"])
+    var defaultSegmentIndex = 0
+    
+    convenience init(segmentIndex:Int) {
+        self.init()
+        defaultSegmentIndex = segmentIndex
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Mine"
-        topseg.selectedSegmentIndex = 0
+        topseg.selectedSegmentIndex = defaultSegmentIndex
         topseg.addTarget(self, action: #selector(MineViewController.segmentChanged(sender:)), for: .valueChanged)
         self.navigationItem.titleView = topseg
     }

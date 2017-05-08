@@ -19,11 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        print(launchOptions ?? "")
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
 
-            let mineVc = UINavigationController(rootViewController: MineViewController())
+            var segmentIdx = 0
+            if let URL = launchOptions?[.url] as? URL {
+                if URL.absoluteString == "pricebot://history" {
+                    segmentIdx = 1
+                }
+            }
+            let mineVc = UINavigationController(rootViewController: MineViewController(segmentIndex:segmentIdx))
             let settingsVc = UINavigationController(rootViewController: SettingsViewController())
             
             mineVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Mine", image: UIImage(named:"star_tab"), selectedImage: UIImage(named:"star_tab"))
@@ -34,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let tabBar = tabBarController.tabBar as? ESTabBar {
                 tabBar.itemCustomPositioning = .fillIncludeSeparator
             }
+            
             window.rootViewController = tabBarController
             window.backgroundColor = UIColor.white
             window.makeKeyAndVisible()
@@ -49,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //handle url scheme
         NavigationMap.initialize()
         if let URL = launchOptions?[.url] as? URL {
-            if Navigator.open(URL) {
+            if !Navigator.open(URL) {
                 Navigator.push(URL)
             }
         }
