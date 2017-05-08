@@ -19,6 +19,7 @@ target 'pr' do
     pod 'Eureka'
     pod 'OneStore'
     pod 'URLNavigator', '~> 1.2'
+    pod 'Pages'
     shared_pods
 end
 
