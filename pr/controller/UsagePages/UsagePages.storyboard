@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Usage Guide-->
+        <scene sceneID="2mn-sc-0VI">
+            <objects>
+                <viewController storyboardIdentifier="usage1" title="Usage Guide" id="y3L-bG-z05" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ban-er-SXc"/>
+                        <viewControllerLayoutGuide type="bottom" id="X0W-qA-NWX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JWI-aw-irc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from a product page" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-ye-i1f">
+                                <rect key="frame" x="109.5" y="326" width="157.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ggd-ye-i1f" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="72t-L6-CRy"/>
+                            <constraint firstItem="ggd-ye-i1f" firstAttribute="centerY" secondItem="JWI-aw-irc" secondAttribute="centerY" id="INn-qW-6pa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9p-5k-ERl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-180" y="188"/>
+        </scene>
+        <!--Usage Guide-->
+        <scene sceneID="3qa-BB-rhg">
+            <objects>
+                <viewController storyboardIdentifier="usage2" title="Usage Guide" id="gqV-sq-VCT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z8L-z9-hYF"/>
+                        <viewControllerLayoutGuide type="bottom" id="dqH-Rw-kRQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jpt-I3-d7j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click share button on bottom of Safari or Amazon App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-A6-CIX">
+                                <rect key="frame" x="24.5" y="325.5" width="327" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oQy-A6-CIX" firstAttribute="centerX" secondItem="jpt-I3-d7j" secondAttribute="centerX" id="QJs-3c-jLq"/>
+                            <constraint firstItem="oQy-A6-CIX" firstAttribute="centerY" secondItem="jpt-I3-d7j" secondAttribute="centerY" id="vjw-i3-eLf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBq-pG-UEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="188"/>
+        </scene>
+        <!--Usage Guide-->
+        <scene sceneID="ifl-UJ-yqf">
+            <objects>
+                <viewController storyboardIdentifier="usage3" title="Usage Guide" id="VW1-qJ-uSP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zb-A5-2Hw"/>
+                        <viewControllerLayoutGuide type="bottom" id="JVr-Dw-fum"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UTF-7k-W57">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click 'Price Bot' in Pop-over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa4-0O-umm">
+                                <rect key="frame" x="103.5" y="325.5" width="169" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pa4-0O-umm" firstAttribute="centerY" secondItem="UTF-7k-W57" secondAttribute="centerY" id="3g5-Zk-7nc"/>
+                            <constraint firstItem="pa4-0O-umm" firstAttribute="centerX" secondItem="UTF-7k-W57" secondAttribute="centerX" id="Xy1-Ee-dHN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0F-55-N4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="188"/>
+        </scene>
+        <!--Usage Guide-->
+        <scene sceneID="AT7-kg-wkB">
+            <objects>
+                <viewController storyboardIdentifier="usage4" title="Usage Guide" id="4SJ-Ew-D5s" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7jj-XU-6wj"/>
+                        <viewControllerLayoutGuide type="bottom" id="97K-jy-9yg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VdP-Lv-A2s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everything is here! Open Safari now." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwI-wp-oun">
+                                <rect key="frame" x="78.5" y="325.5" width="218.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gwI-wp-oun" firstAttribute="centerX" secondItem="VdP-Lv-A2s" secondAttribute="centerX" id="19i-7N-cH1"/>
+                            <constraint firstItem="gwI-wp-oun" firstAttribute="centerY" secondItem="VdP-Lv-A2s" secondAttribute="centerY" id="9l8-LW-jvw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1i-ff-B9O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810" y="188"/>
+        </scene>
+    </scenes>
+</document>

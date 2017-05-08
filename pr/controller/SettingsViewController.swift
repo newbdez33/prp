@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 import Eureka
 import MessageUI
+import Pages
 
 class SettingsViewController: FormViewController {
 
@@ -71,7 +72,20 @@ class SettingsViewController: FormViewController {
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
                 $0.presentationMode = .show(controllerProvider: ControllerProvider.callback {
-                    return HowtoViewController()
+                    let viewControllers = [
+                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage1"),
+                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage2"),
+                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage3"),
+                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage4")
+                    ]
+                    let vc = PagesController(viewControllers)
+                    vc.title = "Usage Guide"
+                    vc.enableSwipe = true
+                    vc.showBottomLine = true
+                    vc.showPageControl = true
+                    vc.hidesBottomBarWhenPushed = true
+                    vc.view.backgroundColor = UIColor.white
+                    return vc
                 }, onDismiss: { vc in _ = vc.navigationController?.popViewController(animated: true) })
             }
             <<< ButtonRow("URL Schemes") {
@@ -153,6 +167,14 @@ class SettingsViewController: FormViewController {
         let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [])
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func hasAmazonAppInstalled() {
+        if UIApplication.shared.canOpenURL(NSURL(string: "com.amazon.mobile.shopping://")! as URL) {
+            print("YES")
+        }else {
+            print("NO")
+        }
     }
 
 }

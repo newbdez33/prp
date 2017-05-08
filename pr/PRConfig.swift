@@ -37,6 +37,9 @@ struct PRConfig {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().shadowImage = UIImage()
         UIBarButtonItem.appearance().setBackButtonBackgroundImage(UIImage(named: "back")!, for: .normal, barMetrics: .default)
+        
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.prGray()
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.prBlack()
     }
 
 }

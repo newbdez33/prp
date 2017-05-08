@@ -23,8 +23,8 @@
 		CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54CB021E9257AF000CC3E8 /* ActionViewController.swift */; };
 		CE54CB061E9257AF000CC3E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54CB041E9257AF000CC3E8 /* MainInterface.storyboard */; };
 		CE54CB0A1E9257AF000CC3E8 /* urlaction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE54CB001E9257AF000CC3E8 /* urlaction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE654A2E1EC0C8B10043C443 /* UsagePages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE654A2D1EC0C8B10043C443 /* UsagePages.storyboard */; };
 		CE65C8521EB5BDED00B39752 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
-		CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */; };
 		CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */; };
 		CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
 		CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A80CF1EA352610021C69B /* PRConfig.swift */; };
@@ -97,8 +97,8 @@
 		CE54CB071E9257AF000CC3E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE54CB0F1E925C8E000CC3E8 /* urlaction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = urlaction.entitlements; sourceTree = "<group>"; };
 		CE54CB101E925E44000CC3E8 /* pr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pr.entitlements; sourceTree = "<group>"; };
+		CE654A2D1EC0C8B10043C443 /* UsagePages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UsagePages.storyboard; sourceTree = "<group>"; };
 		CE65C8511EB5BDED00B39752 /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
-		CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowtoViewController.swift; sourceTree = "<group>"; };
 		CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSchemesViewController.swift; sourceTree = "<group>"; };
 		CE8A80CF1EA352610021C69B /* PRConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRConfig.swift; sourceTree = "<group>"; };
 		CE8A80D31EA381A80021C69B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -219,13 +219,21 @@
 			path = urlaction;
 			sourceTree = "<group>";
 		};
+		CE654A2C1EC0C8980043C443 /* UsagePages */ = {
+			isa = PBXGroup;
+			children = (
+				CE654A2D1EC0C8B10043C443 /* UsagePages.storyboard */,
+			);
+			path = UsagePages;
+			sourceTree = "<group>";
+		};
 		CE8A80D21EA381780021C69B /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE654A2C1EC0C8980043C443 /* UsagePages */,
 				CE8A80D31EA381A80021C69B /* MineViewController.swift */,
 				CE8A80DB1EA3A8190021C69B /* SettingsViewController.swift */,
 				CE8A80E91EA7879F0021C69B /* ProductViewController.swift */,
-				CE65C8551EB60CEB00B39752 /* HowtoViewController.swift */,
 				CE65C8581EB60CF900B39752 /* URLSchemesViewController.swift */,
 			);
 			path = controller;
@@ -406,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE54CAF51E925762000CC3E8 /* LaunchScreen.storyboard in Resources */,
+				CE654A2E1EC0C8B10043C443 /* UsagePages.storyboard in Resources */,
 				CE54CAF21E925762000CC3E8 /* Assets.xcassets in Resources */,
 				CEAEC3791EBCD49D006D3303 /* CRNotificationsMedia.xcassets in Resources */,
 			);
@@ -518,7 +527,6 @@
 				CE8A80D61EA39CC70021C69B /* PRTabbarItemView.swift in Sources */,
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
-				CE65C8561EB60CEB00B39752 /* HowtoViewController.swift in Sources */,
 				CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */,
 				CE8A80EF1EA802D00021C69B /* Price.swift in Sources */,
 				CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */,
