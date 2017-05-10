@@ -74,9 +74,7 @@ class SettingsViewController: FormViewController {
                 $0.presentationMode = .show(controllerProvider: ControllerProvider.callback {
                     let viewControllers = [
                         UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage1"),
-                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage2"),
-                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage3"),
-                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage4")
+                        UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage2")
                     ]
                     let vc = PagesController(viewControllers)
                     vc.title = "Usage Guide"

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +22,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from a product page" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-ye-i1f">
-                                <rect key="frame" x="109.5" y="326" width="157.5" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp1" translatesAutoresizingMaskIntoConstraints="NO" id="cwy-j9-ct4">
+                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="gKb-rQ-HmK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from a product page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjE-ag-AaA">
+                                <rect key="frame" x="104" y="634" width="168" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ggd-ye-i1f" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="72t-L6-CRy"/>
-                            <constraint firstItem="ggd-ye-i1f" firstAttribute="centerY" secondItem="JWI-aw-irc" secondAttribute="centerY" id="INn-qW-6pa"/>
+                            <constraint firstItem="MjE-ag-AaA" firstAttribute="top" secondItem="cwy-j9-ct4" secondAttribute="bottom" constant="29" id="D0o-Uy-qfY"/>
+                            <constraint firstItem="cwy-j9-ct4" firstAttribute="top" secondItem="ban-er-SXc" secondAttribute="bottom" constant="18" id="NoJ-o4-QXJ"/>
+                            <constraint firstItem="cwy-j9-ct4" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="kgS-gB-oaF"/>
+                            <constraint firstItem="MjE-ag-AaA" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="oKv-w8-0IC"/>
+                            <constraint firstItem="cwy-j9-ct4" firstAttribute="height" secondItem="JWI-aw-irc" secondAttribute="height" multiplier="0.85" id="pWh-pP-Xz8"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9p-5k-ERl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="188"/>
+            <point key="canvasLocation" x="-180" y="187.55622188905548"/>
         </scene>
         <!--Usage Guide-->
         <scene sceneID="3qa-BB-rhg">
@@ -52,16 +63,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click share button on bottom of Safari or Amazon App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-A6-CIX">
-                                <rect key="frame" x="24.5" y="325.5" width="327" height="16"/>
+                                <rect key="frame" x="24" y="634" width="327" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp1" translatesAutoresizingMaskIntoConstraints="NO" id="0bv-9Y-yZQ">
+                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="kjC-QD-uVN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp2" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-HC-qmw">
+                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="fkb-IY-HIb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oQy-A6-CIX" firstAttribute="top" secondItem="0bv-9Y-yZQ" secondAttribute="bottom" constant="29" id="7jF-WK-Zex"/>
+                            <constraint firstItem="0bv-9Y-yZQ" firstAttribute="height" secondItem="jpt-I3-d7j" secondAttribute="height" multiplier="0.85" id="OBH-Jw-lmf"/>
                             <constraint firstItem="oQy-A6-CIX" firstAttribute="centerX" secondItem="jpt-I3-d7j" secondAttribute="centerX" id="QJs-3c-jLq"/>
-                            <constraint firstItem="oQy-A6-CIX" firstAttribute="centerY" secondItem="jpt-I3-d7j" secondAttribute="centerY" id="vjw-i3-eLf"/>
+                            <constraint firstItem="uPy-HC-qmw" firstAttribute="centerX" secondItem="0bv-9Y-yZQ" secondAttribute="centerX" id="Txx-PX-5bX"/>
+                            <constraint firstItem="uPy-HC-qmw" firstAttribute="centerY" secondItem="0bv-9Y-yZQ" secondAttribute="centerY" id="n39-hB-gos"/>
+                            <constraint firstItem="0bv-9Y-yZQ" firstAttribute="centerX" secondItem="jpt-I3-d7j" secondAttribute="centerX" id="opq-2u-9o2"/>
+                            <constraint firstItem="0bv-9Y-yZQ" firstAttribute="top" secondItem="z8L-z9-hYF" secondAttribute="bottom" constant="18" id="rqe-kw-sSN"/>
+                            <constraint firstItem="uPy-HC-qmw" firstAttribute="height" secondItem="0bv-9Y-yZQ" secondAttribute="height" id="ywY-QP-iIS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -130,4 +160,8 @@
             <point key="canvasLocation" x="1810" y="188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="setp1" width="375" height="667"/>
+        <image name="setp2" width="375" height="667"/>
+    </resources>
 </document>
