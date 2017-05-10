@@ -697,8 +697,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salmonapps.app.pr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b4cc7c15-b12a-4f79-bd1c-1b597c07f999";
-				PROVISIONING_PROFILE_SPECIFIER = "pr-dev";
+				PROVISIONING_PROFILE = "7140ecf6-cffb-43bc-968b-211297b5626b";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.salmonapps.app.pr";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -717,8 +717,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salmonapps.app.pr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "94cbfb1d-cc4e-4b27-bf8d-203fb5296426";
-				PROVISIONING_PROFILE_SPECIFIER = "pr-adhoc";
+				PROVISIONING_PROFILE = "17e3721e-a9e6-48bc-9f34-a856cb40fab7";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.salmonapps.app.pr";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -735,8 +735,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salmonapps.app.pr.urlaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "407d4101-ae50-4ba8-8c3e-f86ad6b3372d";
-				PROVISIONING_PROFILE_SPECIFIER = "pr-action-extension-dev";
+				PROVISIONING_PROFILE = "ba21cc26-3de9-47b4-86d5-c6d551e9cb67";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.salmonapps.app.pr.urlaction";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -755,8 +755,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.salmonapps.app.pr.urlaction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "baccbce6-fa16-4abb-87d9-c2041d658979";
-				PROVISIONING_PROFILE_SPECIFIER = "pr-action-extension-adhoc";
+				PROVISIONING_PROFILE = "a634a56b-6130-4304-b636-cab8f8e3629b";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.salmonapps.app.pr.urlaction";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
