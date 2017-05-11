@@ -16,3 +16,5 @@ DerivedData
 *.xcuserstate
 .DS_Store
 /build_errors.log
+/pr.app.dSYM.zip
+/fastlane/report.xml
