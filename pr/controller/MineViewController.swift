@@ -121,12 +121,15 @@ extension ItemsViewController: ASTableDataSource, ASTableDelegate {
         let cellNodeBlock = { () -> ASCellNode in
             
             let cell = ItemCellNode()
+            cell.neverShowPlaceholders = true
+            
             let realm = try! Realm()
             guard let item = realm.resolve(itemRef) else {
                 return cell
             }
             cell.bind(item: item)
             cell.infoButton.addTarget(self, action: #selector(ItemsViewController.infoAction(sender:)), forControlEvents: .touchUpInside)
+            
             return cell
         }
         
