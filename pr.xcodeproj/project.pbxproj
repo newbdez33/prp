@@ -318,6 +318,7 @@
 				CE54CB0E1E9257AF000CC3E8 /* Embed App Extensions */,
 				E90A2BDE1D0BEF079C1506CC /* [CP] Embed Pods Frameworks */,
 				60ADAE59AF589BE680E5AF91 /* [CP] Copy Pods Resources */,
+				CE2617B21EC5E61500135840 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -491,6 +492,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-urlaction/Pods-urlaction-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CE2617B21EC5E61500135840 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" be267c870371d122cf90b237a5fa052164a4a9d5 f11e768ac853513e35a91d70c36af3829b3f3206538601b18fbafa670a9f8ebd";
 		};
 		E90A2BDE1D0BEF079C1506CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

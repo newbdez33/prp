@@ -20,6 +20,8 @@ target 'pr' do
     pod 'OneStore'
     pod 'URLNavigator', '~> 1.2'
     pod 'Pages'
+    pod 'Fabric'
+    pod 'Crashlytics'
     shared_pods
 end
 
