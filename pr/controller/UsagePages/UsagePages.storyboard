@@ -23,14 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp1" translatesAutoresizingMaskIntoConstraints="NO" id="cwy-j9-ct4">
-                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <rect key="frame" x="38" y="28" width="298" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="gKb-rQ-HmK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start from a product page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjE-ag-AaA">
-                                <rect key="frame" x="104" y="634" width="168" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjE-ag-AaA">
+                                <rect key="frame" x="58" y="611" width="260.5" height="33.5"/>
+                                <string key="text">Start from a product page(Amazon URL)
+Click share button on bottom of Safari</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,8 +40,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MjE-ag-AaA" firstAttribute="top" secondItem="cwy-j9-ct4" secondAttribute="bottom" constant="29" id="D0o-Uy-qfY"/>
-                            <constraint firstItem="cwy-j9-ct4" firstAttribute="top" secondItem="ban-er-SXc" secondAttribute="bottom" constant="18" id="NoJ-o4-QXJ"/>
+                            <constraint firstItem="MjE-ag-AaA" firstAttribute="top" secondItem="cwy-j9-ct4" secondAttribute="bottom" constant="16" id="D0o-Uy-qfY"/>
+                            <constraint firstItem="cwy-j9-ct4" firstAttribute="top" secondItem="ban-er-SXc" secondAttribute="bottom" constant="8" id="NoJ-o4-QXJ"/>
                             <constraint firstItem="cwy-j9-ct4" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="kgS-gB-oaF"/>
                             <constraint firstItem="MjE-ag-AaA" firstAttribute="centerX" secondItem="JWI-aw-irc" secondAttribute="centerX" id="oKv-w8-0IC"/>
                             <constraint firstItem="cwy-j9-ct4" firstAttribute="height" secondItem="JWI-aw-irc" secondAttribute="height" multiplier="0.85" id="pWh-pP-Xz8"/>
@@ -62,21 +64,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click share button on bottom of Safari or Amazon App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-A6-CIX">
-                                <rect key="frame" x="24" y="634" width="327" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-A6-CIX">
+                                <rect key="frame" x="103" y="611" width="169" height="31.5"/>
+                                <string key="text">Click 'Price Bot' in Pop-over
+Done!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp1" translatesAutoresizingMaskIntoConstraints="NO" id="0bv-9Y-yZQ">
-                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <rect key="frame" x="38" y="28" width="298" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="kjC-QD-uVN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setp2" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-HC-qmw">
-                                <rect key="frame" x="38" y="38" width="298" height="567"/>
+                                <rect key="frame" x="38" y="28" width="298" height="567"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="298" id="fkb-IY-HIb"/>
                                 </constraints>
@@ -84,13 +88,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oQy-A6-CIX" firstAttribute="top" secondItem="0bv-9Y-yZQ" secondAttribute="bottom" constant="29" id="7jF-WK-Zex"/>
+                            <constraint firstItem="oQy-A6-CIX" firstAttribute="top" secondItem="0bv-9Y-yZQ" secondAttribute="bottom" constant="16" id="7jF-WK-Zex"/>
                             <constraint firstItem="0bv-9Y-yZQ" firstAttribute="height" secondItem="jpt-I3-d7j" secondAttribute="height" multiplier="0.85" id="OBH-Jw-lmf"/>
                             <constraint firstItem="oQy-A6-CIX" firstAttribute="centerX" secondItem="jpt-I3-d7j" secondAttribute="centerX" id="QJs-3c-jLq"/>
                             <constraint firstItem="uPy-HC-qmw" firstAttribute="centerX" secondItem="0bv-9Y-yZQ" secondAttribute="centerX" id="Txx-PX-5bX"/>
                             <constraint firstItem="uPy-HC-qmw" firstAttribute="centerY" secondItem="0bv-9Y-yZQ" secondAttribute="centerY" id="n39-hB-gos"/>
                             <constraint firstItem="0bv-9Y-yZQ" firstAttribute="centerX" secondItem="jpt-I3-d7j" secondAttribute="centerX" id="opq-2u-9o2"/>
-                            <constraint firstItem="0bv-9Y-yZQ" firstAttribute="top" secondItem="z8L-z9-hYF" secondAttribute="bottom" constant="18" id="rqe-kw-sSN"/>
+                            <constraint firstItem="0bv-9Y-yZQ" firstAttribute="top" secondItem="z8L-z9-hYF" secondAttribute="bottom" constant="8" id="rqe-kw-sSN"/>
                             <constraint firstItem="uPy-HC-qmw" firstAttribute="height" secondItem="0bv-9Y-yZQ" secondAttribute="height" id="ywY-QP-iIS"/>
                         </constraints>
                     </view>
