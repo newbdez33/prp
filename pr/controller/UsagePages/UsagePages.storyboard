@@ -55,7 +55,7 @@ Click share button on bottom of Safari</string>
         <!--Usage Guide-->
         <scene sceneID="3qa-BB-rhg">
             <objects>
-                <viewController storyboardIdentifier="usage2" title="Usage Guide" id="gqV-sq-VCT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="usage2" title="Usage Guide" id="gqV-sq-VCT" customClass="Usage2ViewController" customModule="pr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z8L-z9-hYF"/>
                         <viewControllerLayoutGuide type="bottom" id="dqH-Rw-kRQ"/>
@@ -97,6 +97,9 @@ Click share button on bottom of Safari</string>
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="openAction:" destination="gqV-sq-VCT" eventType="touchUpInside" id="6Pu-qb-sOx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

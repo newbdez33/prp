@@ -49,6 +49,7 @@
 		CED6C5251E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CEF248F21EAB8E4900989417 /* ItemCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248F11EAB8E4900989417 /* ItemCellNode.swift */; };
+		CEF25DDF1EC8AB8C0090D486 /* Usage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		CEAEC37D1EBCDC47006D3303 /* NavigationMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMap.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 		CEF248F11EAB8E4900989417 /* ItemCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellNode.swift; sourceTree = "<group>"; };
+		CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usage2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				CE654A2D1EC0C8B10043C443 /* UsagePages.storyboard */,
+				CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */,
 			);
 			path = UsagePages;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8A80E01EA3AA150021C69B /* UIFont+PR.swift in Sources */,
+				CEF25DDF1EC8AB8C0090D486 /* Usage2ViewController.swift in Sources */,
 				CEAEC37C1EBCD49D006D3303 /* CRNotifications.swift in Sources */,
 				CEAEC37A1EBCD49D006D3303 /* Colors.swift in Sources */,
 				CEAEC37E1EBCDC47006D3303 /* NavigationMap.swift in Sources */,
