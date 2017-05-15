@@ -49,8 +49,12 @@ class SettingsViewController: FormViewController {
                                         row.updateCell()
                                         
                                         //TODO Replace with a nice dialog
-                                        let alert = UIAlertController(title: "Please enable app notification", message: "Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications.", preferredStyle: .alert)
-                                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                        let alert = UIAlertController(title: "Enable app notification", message: "To get new price chang notifications, Please Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications.", preferredStyle: .alert)
+                                        alert.addAction(UIAlertAction(title: "Later", style: .default, handler: nil))
+                                        alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                                            let url = URL(string: UIApplicationOpenSettingsURLString)
+                                            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+                                        }))
                                         self?.present(alert, animated: true, completion: nil)
                                     }
                                 }
