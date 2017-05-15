@@ -46,6 +46,7 @@
 		CEAEC37C1EBCD49D006D3303 /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC3781EBCD49D006D3303 /* CRNotifications.swift */; };
 		CEAEC37E1EBCDC47006D3303 /* NavigationMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEC37D1EBCDC47006D3303 /* NavigationMap.swift */; };
 		CEB0E4291E92761100A7B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54CAF11E925762000CC3E8 /* Assets.xcassets */; };
+		CECDFFAA1EC9D247006AB10D /* EmptyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECDFFA91EC9D247006AB10D /* EmptyNode.swift */; };
 		CED6C5251E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CEF248F21EAB8E4900989417 /* ItemCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248F11EAB8E4900989417 /* ItemCellNode.swift */; };
@@ -115,6 +116,7 @@
 		CEAEC3771EBCD49D006D3303 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
 		CEAEC3781EBCD49D006D3303 /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotifications.swift; sourceTree = "<group>"; };
 		CEAEC37D1EBCDC47006D3303 /* NavigationMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMap.swift; sourceTree = "<group>"; };
+		CECDFFA91EC9D247006AB10D /* EmptyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyNode.swift; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
 		CEF248F11EAB8E4900989417 /* ItemCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellNode.swift; sourceTree = "<group>"; };
 		CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usage2ViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				CE32593E1EA0C079005E5768 /* InformationNode.swift */,
 				CE8A80D51EA39CC70021C69B /* PRTabbarItemView.swift */,
 				CEF248F11EAB8E4900989417 /* ItemCellNode.swift */,
+				CECDFFA91EC9D247006AB10D /* EmptyNode.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				CE32593C1EA0BE81005E5768 /* TrendingNode.swift in Sources */,
 				CE65C8591EB60CF900B39752 /* URLSchemesViewController.swift in Sources */,
 				CE8A80D01EA352610021C69B /* PRConfig.swift in Sources */,
+				CECDFFAA1EC9D247006AB10D /* EmptyNode.swift in Sources */,
 				CE8A80EF1EA802D00021C69B /* Price.swift in Sources */,
 				CE8A80D41EA381A80021C69B /* MineViewController.swift in Sources */,
 				CEF248F21EAB8E4900989417 /* ItemCellNode.swift in Sources */,

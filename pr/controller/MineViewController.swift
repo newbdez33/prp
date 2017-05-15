@@ -10,10 +10,13 @@ import UIKit
 import RealmSwift
 import AsyncDisplayKit
 import TUSafariActivity
+import Pages
 
 class MineViewController: ItemsViewController {
     let topseg = UISegmentedControl(items: ["Favorites", "History"])
     var defaultSegmentIndex = 0
+    
+    let emptyNode = EmptyNode()
     
     convenience init(segmentIndex:Int) {
         self.init()
@@ -27,6 +30,13 @@ class MineViewController: ItemsViewController {
         topseg.selectedSegmentIndex = defaultSegmentIndex
         topseg.addTarget(self, action: #selector(MineViewController.segmentChanged(sender:)), for: .valueChanged)
         self.navigationItem.titleView = topseg
+        
+        emptyNode.openButton.addTarget(self, action: #selector(self.howtoAction), forControlEvents: .touchUpInside)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        emptyNode.frame = self.view.bounds
     }
     
     override func getItems() {
@@ -35,11 +45,33 @@ class MineViewController: ItemsViewController {
         }else {
             items = Item.allItems()
         }
+        if items!.count <= 0 {
+            //show empty node
+            emptyNode.frame = self.view.bounds
+            view.addSubnode(emptyNode)
+        }else {
+            emptyNode.removeFromSupernode()
+        }
         tableNode.reloadData()
     }
     
     func segmentChanged(sender:UISegmentedControl) {
         getItems()
+    }
+    
+    func howtoAction() {
+        let viewControllers = [
+            UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage1"),
+            UIStoryboard(name: "UsagePages", bundle: nil).instantiateViewController(withIdentifier: "usage2")
+        ]
+        let vc = PagesController(viewControllers)
+        vc.title = "Usage Guide"
+        vc.enableSwipe = true
+        vc.showBottomLine = true
+        vc.showPageControl = true
+        vc.hidesBottomBarWhenPushed = true
+        vc.view.backgroundColor = UIColor.white
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
