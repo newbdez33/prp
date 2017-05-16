@@ -13,7 +13,7 @@ import TUSafariActivity
 import Pages
 
 class MineViewController: ItemsViewController {
-    let topseg = UISegmentedControl(items: ["Favorites", "History"])
+    let topseg = UISegmentedControl(items: [NSLocalizedString("Favorites",  comment: "Favorites"), NSLocalizedString("History", comment:"History")])
     var defaultSegmentIndex = 0
     
     let emptyNode = EmptyNode()
@@ -26,7 +26,8 @@ class MineViewController: ItemsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Mine"
+        self.title = NSLocalizedString("Mine", comment: "Mine")
+        topseg.frame = CGRect(x: 0, y: 0, width: 180, height: 30)
         topseg.selectedSegmentIndex = defaultSegmentIndex
         topseg.addTarget(self, action: #selector(MineViewController.segmentChanged(sender:)), for: .valueChanged)
         self.navigationItem.titleView = topseg

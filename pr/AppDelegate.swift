@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mineVc = UINavigationController(rootViewController: MineViewController(segmentIndex:segmentIdx))
             let settingsVc = UINavigationController(rootViewController: SettingsViewController())
             
-            mineVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Mine", image: UIImage(named:"star_tab"), selectedImage: UIImage(named:"star_tab"))
-            settingsVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: "Settings", image: UIImage(named:"settings_tab"), selectedImage: UIImage(named:"settings_tab"))
+            mineVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: NSLocalizedString("Mine", comment: "Mine"), image: UIImage(named:"star_tab"), selectedImage: UIImage(named:"star_tab"))
+            settingsVc.tabBarItem = ESTabBarItem.init(PRTabbarItemView(), title: NSLocalizedString("Settings", comment: "Settings"), image: UIImage(named:"settings_tab"), selectedImage: UIImage(named:"settings_tab"))
             
             let tabBarController = ESTabBarController()
             tabBarController.viewControllers = [mineVc, settingsVc]

@@ -16,7 +16,7 @@ class SettingsViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Settings"
+        title = NSLocalizedString("Settings", comment: "Settings")
         form +++
             Section() {
                 $0.header = HeaderFooterView<PRLogoView>(.class)
