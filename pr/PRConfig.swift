@@ -20,7 +20,7 @@ struct PRConfig {
         // 默认将 Realm 放在 App Group 里
         let directory:URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: PRConfig.appGroupID)!
         let realmPath = directory.appendingPathComponent("db.realm")
-        var config = Realm.Configuration(schemaVersion: 3, migrationBlock: { migration, oldSchemaVersion in
+        var config = Realm.Configuration(schemaVersion: 4, migrationBlock: { migration, oldSchemaVersion in
             
         })
         

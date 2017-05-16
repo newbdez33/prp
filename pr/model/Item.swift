@@ -25,6 +25,8 @@ class Item: Object {
     dynamic var created_at:Int = 0
     dynamic var updated_at:Int = 0
     
+    dynamic var added_at:Int = 0
+    
     //local
     dynamic var isTracking:Bool = false
     var history = List<Price>()
@@ -48,6 +50,8 @@ class Item: Object {
         lowest      = "lowest" <~~ json ?? 0
         created_at  = "created_at" <~~ json ?? 0
         updated_at  = "updated_at" <~~ json ?? 0
+        
+        added_at    = Int(Date().timeIntervalSince1970)
         
     }
     
@@ -136,13 +140,13 @@ extension Item {
     static func mineItems() -> Results<Item> {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "isTracking == true")
-        let result = realm.objects(Item.self).filter(predicate) as Results<Item>
+        let result = realm.objects(Item.self).filter(predicate).sorted(byKeyPath: "added_at", ascending: false) as Results<Item>
         return result
     }
     
     static func allItems() -> Results<Item> {
         let realm = try! Realm()
-        let result = realm.objects(Item.self)
+        let result = realm.objects(Item.self).sorted(byKeyPath: "added_at", ascending: false)
         return result
     }
 }
