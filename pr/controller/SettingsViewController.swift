@@ -22,9 +22,9 @@ class SettingsViewController: FormViewController {
                 $0.header = HeaderFooterView<PRLogoView>(.class)
             }
             +++
-            Section("PRICE DROP NOTIFICATION")
+            Section(NSLocalizedString("PRICE DROP NOTIFICATION", comment: ""))
             <<<
-            SwitchRow("Price drop notification") {
+            SwitchRow(NSLocalizedString("Price drop notification", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
@@ -49,9 +49,9 @@ class SettingsViewController: FormViewController {
                                         row.updateCell()
                                         
                                         //TODO Replace with a nice dialog
-                                        let alert = UIAlertController(title: "Enable app notification", message: "To get new price chang notifications, Please Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications.", preferredStyle: .alert)
-                                        alert.addAction(UIAlertAction(title: "Later", style: .default, handler: nil))
-                                        alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
+                                        let alert = UIAlertController(title: NSLocalizedString("Enable app notification", comment: ""), message: NSLocalizedString("To get new price chang notifications, Please Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications.", comment: ""), preferredStyle: .alert)
+                                        alert.addAction(UIAlertAction(title: NSLocalizedString("Later", comment: ""), style: .default, handler: nil))
+                                        alert.addAction(UIAlertAction(title: NSLocalizedString("Setting", comment: ""), style: .default, handler: { (_) in
                                             let url = URL(string: UIApplicationOpenSettingsURLString)
                                             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
                                         }))
@@ -70,8 +70,8 @@ class SettingsViewController: FormViewController {
                 }
             }
             +++
-            Section("USE PRICE BOT")
-            <<< ButtonRow("How to use it") {
+            Section(NSLocalizedString("USE PRICE BOT", comment: ""))
+            <<< ButtonRow(NSLocalizedString("How to use it", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
@@ -99,15 +99,15 @@ class SettingsViewController: FormViewController {
                 }, onDismiss: { vc in _ = vc.navigationController?.popViewController(animated: true) })
             }
             +++
-            Section("MISC")
-            <<< ButtonRow("Recommend Price Bot") {
+            Section(NSLocalizedString("MISC", comment: ""))
+            <<< ButtonRow(NSLocalizedString("Recommend Price Bot", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
             }.onCellSelection({ (cell, row) in
                 self.shareAction()
             })
-            <<< ButtonRow("Rate on App Store") {
+            <<< ButtonRow(NSLocalizedString("Rate on App Store", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
@@ -116,7 +116,7 @@ class SettingsViewController: FormViewController {
                     //
                 })
             })
-            <<< ButtonRow("Give us feedback") {
+            <<< ButtonRow(NSLocalizedString("Give us feedback", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
@@ -133,7 +133,7 @@ class SettingsViewController: FormViewController {
                     // show failure alert
                 }
             })
-            <<< ButtonRow("Visit our website") {
+            <<< ButtonRow(NSLocalizedString("Visit our website", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.tintColor = UIColor.prBlack()
@@ -165,7 +165,7 @@ class SettingsViewController: FormViewController {
     func shareAction() {
 
         let url = URL(string:PRConfig.appStoreURL)
-        let urlToShare = [ UIApplication.shared.icon!, "Price Bot - Amazon price tracking tool!", url! ] as [Any]
+        let urlToShare = [ UIApplication.shared.icon!, NSLocalizedString("Price Bot - Amazon price tracking tool!", comment: ""), url! ] as [Any]
         let activityViewController = UIActivityViewController(activityItems: urlToShare, applicationActivities: [])
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)

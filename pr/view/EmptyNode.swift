@@ -20,11 +20,11 @@ class EmptyNode: ASDisplayNode {
     
     override init() {
         super.init()
-        titleLabel.attributedText = NSAttributedString(string: "Oops, This list is empty.", attributes: [ NSForegroundColorAttributeName : UIColor.prGray(), NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 13)!])
+        titleLabel.attributedText = NSAttributedString(string: NSLocalizedString("Oops, This list is empty.",  comment: ""), attributes: [ NSForegroundColorAttributeName : UIColor.prGray(), NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 13)!])
         addSubnode(titleLabel)
         addSubnode(imageNode)
         
-        openButton.setTitle("How to use it >", with: UIFont(name: "HelveticaNeue-Light", size: 13)!, with: UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1), for: .normal)
+        openButton.setTitle(NSLocalizedString("How to use it >",  comment: ""), with: UIFont(name: "HelveticaNeue-Light", size: 13)!, with: UIColor(colorLiteralRed: 0, green: 122/255, blue: 1, alpha: 1), for: .normal)
         addSubnode(openButton)
     }
     

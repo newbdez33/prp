@@ -17,8 +17,8 @@ class URLSchemesViewController: FormViewController {
         //TODO tableView?.estimatedRowHeight = 60
         title = "URL Schemes"
         form +++
-            Section("SELECT TO COPY URL SCHEME")
-            <<< LabelRow("Show History List") {
+            Section(NSLocalizedString("SELECT TO COPY URL SCHEME", comment: ""))
+            <<< LabelRow(NSLocalizedString("Show History List", comment: "")) {
                 $0.title = $0.tag
                 $0.cellStyle = .subtitle    //ORDER !!!
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
@@ -34,7 +34,7 @@ class URLSchemesViewController: FormViewController {
                     UIPasteboard.general.string = url
                     CRNotifications.showNotification(type: .info, title: "URL Scheme Copied", message: url, dismissDelay: 1)
                 })
-            <<< LabelRow("Show Favorites List") {
+            <<< LabelRow(NSLocalizedString("Show Favorites List", comment: "")) {
                 $0.title = $0.tag
                 $0.cellStyle = .subtitle    //ORDER !!!
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
@@ -48,9 +48,9 @@ class URLSchemesViewController: FormViewController {
                     let url = cell.detailTextLabel?.text ?? ""
                     print(url)
                     UIPasteboard.general.string = url
-                    CRNotifications.showNotification(type: .info, title: "URL Scheme Copied", message: url, dismissDelay: 1)
+                    CRNotifications.showNotification(type: .info, title: NSLocalizedString("URL Scheme Copied", comment: ""), message: url, dismissDelay: 1)
                 })
-            <<< LabelRow("Show Product Activity") {
+            <<< LabelRow(NSLocalizedString("Show Product Activity", comment: "")) {
                 $0.title = $0.tag
                 $0.cellStyle = .subtitle    //ORDER !!!
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
@@ -64,7 +64,7 @@ class URLSchemesViewController: FormViewController {
                     let url = cell.detailTextLabel?.text ?? ""
                     print(url)
                     UIPasteboard.general.string = url
-                    CRNotifications.showNotification(type: .info, title: "URL Scheme Copied", message: url, dismissDelay: 1)
+                    CRNotifications.showNotification(type: .info, title: NSLocalizedString("URL Scheme Copied", comment: ""), message: url, dismissDelay: 1)
                 })
             //TODO pricebot://activity?url=
     }

@@ -68,7 +68,7 @@ extension TrendingNode {
             return
         }
         
-        titleNode.attributedText = TrendingNode.getTitleString(string: "Trending")
+        titleNode.attributedText = TrendingNode.getTitleString(string: NSLocalizedString("Trending", comment:""))
         addSubnode(titleNode)
         addSubnode(lineChartNode)
         updateChart(prices)

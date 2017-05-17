@@ -92,7 +92,7 @@ extension PriceNode {
                 currency =  item.currency
             }
             let chartView = precentBarChartNode.view as! HorizontalBarChartView
-            chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Lowest: \(currency)\(lowest)", "Highest: \(currency)\(highest)", "Current: \(currency)\(current)"])
+            chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: [NSLocalizedString("Lowest", comment:"")+": \(currency)\(lowest)", NSLocalizedString("Highest", comment:"")+": \(currency)\(highest)", NSLocalizedString("Current", comment:"")+": \(currency)\(current)"])
             
             
             let yvals = [BarChartDataEntry(x: 0, y: Double(lowest)), BarChartDataEntry(x: 1, y: Double(highest)), BarChartDataEntry(x: 2, y: Double(current))]
