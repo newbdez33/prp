@@ -120,6 +120,9 @@ Click share button on bottom of Safari</string>
                             <constraint firstItem="uPy-HC-qmw" firstAttribute="height" secondItem="0bv-9Y-yZQ" secondAttribute="height" id="ywY-QP-iIS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="openButton" destination="wnU-U6-Qxs" id="uBg-8g-bf5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBq-pG-UEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
