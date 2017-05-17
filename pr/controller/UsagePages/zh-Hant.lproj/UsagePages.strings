@@ -1,0 +1,24 @@
+
+/* Class = "UIViewController"; title = "Usage Guide"; ObjectID = "4SJ-Ew-D5s"; */
+"4SJ-Ew-D5s.title" = "使用指南";
+
+/* Class = "UILabel"; text = "Start from a product page(Amazon URL)\nClick share button on bottom of Safari"; ObjectID = "MjE-ag-AaA"; */
+"MjE-ag-AaA.text" = "先用瀏覽器打開一個Amazon的商品頁面\n點擊瀏覽器底部的分享按鈕";
+
+/* Class = "UIViewController"; title = "Usage Guide"; ObjectID = "VW1-qJ-uSP"; */
+"VW1-qJ-uSP.title" = "使用指南";
+
+/* Class = "UIViewController"; title = "Usage Guide"; ObjectID = "gqV-sq-VCT"; */
+"gqV-sq-VCT.title" = "使用指南";
+
+/* Class = "UILabel"; text = "Everything is here! Open Safari now."; ObjectID = "gwI-wp-oun"; */
+"gwI-wp-oun.text" = "趕快試試！打開商品網站吧";
+
+/* Class = "UILabel"; text = "Click 'Price Bot' in Pop-over"; ObjectID = "oQy-A6-CIX"; */
+"oQy-A6-CIX.text" = "選擇彈框中的 Price Bot";
+
+/* Class = "UILabel"; text = "Click 'Price Bot' in Pop-over"; ObjectID = "pa4-0O-umm"; */
+"pa4-0O-umm.text" = "選擇彈框中的 Price Bot";
+
+/* Class = "UIViewController"; title = "Usage Guide"; ObjectID = "y3L-bG-z05"; */
+"y3L-bG-z05.title" = "使用指南";

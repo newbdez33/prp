@@ -127,6 +127,9 @@
 		CECDFFC51ECB2296006AB10D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CECDFFC61ECB278E006AB10D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		CED6C5241E93E8A4009589FA /* ProductNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductNode.swift; sourceTree = "<group>"; };
+		CEDAFF701ECC936400D0C1E7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/UsagePages.strings"; sourceTree = "<group>"; };
+		CEDAFF711ECC936400D0C1E7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		CEDAFF721ECC936400D0C1E7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CEF248F11EAB8E4900989417 /* ItemCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellNode.swift; sourceTree = "<group>"; };
 		CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usage2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -422,6 +425,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = CE54CADE1E925762000CC3E8;
 			productRefGroup = CE54CAE81E925762000CC3E8 /* Products */;
@@ -619,6 +623,7 @@
 				CE54CB051E9257AF000CC3E8 /* Base */,
 				CECDFFAF1ECB192E006AB10D /* zh-Hans */,
 				CECDFFB31ECB1948006AB10D /* en */,
+				CEDAFF711ECC936400D0C1E7 /* zh-Hant */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 				CECDFFAC1ECB191B006AB10D /* Base */,
 				CECDFFAE1ECB192E006AB10D /* zh-Hans */,
 				CECDFFB11ECB193F006AB10D /* en */,
+				CEDAFF701ECC936400D0C1E7 /* zh-Hant */,
 			);
 			name = UsagePages.storyboard;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 			children = (
 				CECDFFC31ECB2293006AB10D /* en */,
 				CECDFFC51ECB2296006AB10D /* zh-Hans */,
+				CEDAFF721ECC936400D0C1E7 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

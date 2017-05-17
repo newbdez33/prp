@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  pr
+
+  Created by JackyZ on 2017/05/16.
+  Copyright © 2017 Salmonapps. All rights reserved.
+*/
+
+"Mine" = "我的";
+"Settings" = "設置";
+"Favorites" = "收藏";
+"History" = "歷史";
+"Oops, This list is empty." = "當前列表為空";
+"How to use it >" = "看看如何使用";
+"Trending" = "歷史價格";
+"Current" = "現在價格";
+"Highest" = "歷史最高";
+"Lowest" = "歷史最低";
+
+"PRICE DROP NOTIFICATION" = "降價通知";
+"Price drop notification" = "開啟降價通知";
+"USE PRICE BOT" = "使用";
+"How to use it" = "如何使用";
+"Recommend Price Bot" = "把 Price Bot 分享給朋友";
+"Rate on App Store" = "去 App Store 打分";
+"Give us feedback" = "發送反饋";
+"Visit our website" = "官網";
+"SELECT TO COPY URL SCHEME" = "點擊以復制 URL SCHEME";
+"Show History List" = "查看歷史列表";
+"Show Favorites List" = "查看收藏列表";
+"Show Product Activity" = "查看商品歷史價格";
+"URL Scheme Copied" = "URL Scheme 復制成功";
+"MISC" = "其它";
+"Enable app notification" = "需要打開應用推送";
+"To get new price chang notifications, Please Go to iOS Settings > Notifications > Price Bot > Allow Notifications to Enable app notifications." = "使用通知功能需要到 設置 > 通知 > Price Bot > 允許通知";
+"Later" = "稍後完成";
+"Price Bot - Amazon price tracking tool!" = "亞馬遜價格追蹤工具!";
+"Setting" = "設置";
+"We are currently support those sites." = "目前已經支持的網站";
+"Cancel" = "取消";
+"Everything is here!" = "趕快試試吧！";
+"Open Amazon site now" = "打開Amazon網站";
