@@ -72,6 +72,14 @@ extension Item {
         }
     }
     
+    func remove() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(self)
+        }
+    }
+    
     func update() {
         guard let old = Item.find(byId: self.asin) else {
             return

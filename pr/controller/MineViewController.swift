@@ -132,7 +132,7 @@ class ItemsViewController: UIViewController {
     
 }
 
-extension ItemsViewController: ASTableDataSource, ASTableDelegate {
+extension ItemsViewController: ASTableDataSource, ASTableDelegate, UITableViewDelegate {
     func numberOfSections(in tableNode: ASTableNode) -> Int {
         return 1
     }
@@ -173,5 +173,21 @@ extension ItemsViewController: ASTableDataSource, ASTableDelegate {
         let item = items![indexPath.row]
         let vc = ProductViewController(id: item.asin)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableNode(_ tableNode: ASTableNode, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = items![indexPath.row]
+            item.remove()
+            getItems()
+        }
     }
 }
