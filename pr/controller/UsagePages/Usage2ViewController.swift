@@ -39,6 +39,8 @@ class Usage2ViewController: UIViewController {
             UIApplication.shared.open(URL(string:"http://amazon.de")!, options: [:], completionHandler: nil)
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
+        alert.popoverPresentationController?.sourceView = sender
+        alert.popoverPresentationController?.sourceRect = sender.bounds
         present(alert, animated: true, completion: nil)
     }
 
