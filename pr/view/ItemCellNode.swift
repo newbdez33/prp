@@ -44,7 +44,7 @@ class ItemCellNode: ASCellNode {
         titleNode.attributedText = ItemCellNode.getTitleString(string: item.title)
         if item.photo != "" {
             if let url = URL(string:item.photo) {
-                imageNode.url = url
+                imageNode.setURL(url, resetToDefault: false)
             }
         }
         

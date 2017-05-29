@@ -15,7 +15,7 @@ class Usage2ViewController: UIViewController {
         super.viewDidLoad()
 
         //Everything is here! Open Amazon site now
-        let attrString = NSMutableAttributedString(string: NSLocalizedString("Everything is here! ", comment: ""),
+        let attrString = NSMutableAttributedString(string: NSLocalizedString("Everything is here!", comment: ""),
                                                    attributes: [ NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size:14)! ])
         
         attrString.append(NSMutableAttributedString(string: NSLocalizedString("Open Amazon site now", comment: ""),
