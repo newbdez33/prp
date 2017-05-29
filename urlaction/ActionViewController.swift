@@ -11,6 +11,8 @@ import MobileCoreServices
 import JHSpinner
 import AsyncDisplayKit
 import RealmSwift
+import Fabric
+import Crashlytics
 
 class ActionViewController: UIViewController {
 
@@ -101,6 +103,7 @@ class ActionViewController: UIViewController {
     }
     
     func loadProductView(url:URL) {
+        
         emptyMessageLabel.isHidden = true
         //API
         productNode.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: productNode.heightOfContents())
@@ -113,6 +116,12 @@ class ActionViewController: UIViewController {
         Item.requestWithUrl(url:url) { (item:Item?) in
             
             if item != nil && item!.asin != "" {
+                
+                Answers.logContentView(withName: "User shows product from action extension",
+                                               contentType: "URL Action",
+                                               contentId: item!.asin,
+                                               customAttributes: ["url":url.description])
+                
                 self.asin = item!.asin
                 let founded = Item.find(byId: item!.asin)
                 if founded != nil {
@@ -134,6 +143,10 @@ class ActionViewController: UIViewController {
                 }
                 
             }else {
+                Answers.logContentView(withName: "User gets a unsupported view from action extension",
+                                               contentType: "URL Action",
+                                               contentId: "unsupported-product",
+                                               customAttributes: ["url":url.description])
                 self.emptyMessageLabel.isHidden = false
                 self.spinner.dismiss()
             }

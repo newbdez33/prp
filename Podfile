@@ -11,6 +11,8 @@ def shared_pods
     pod 'JHSpinner'
     pod 'Charts'
     pod 'RealmSwift'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'pr' do
@@ -20,8 +22,6 @@ target 'pr' do
     pod 'OneStore'
     pod 'URLNavigator', '~> 1.2'
     pod 'Pages'
-    pod 'Fabric'
-    pod 'Crashlytics'
     shared_pods
 end
 
