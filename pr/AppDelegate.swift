@@ -56,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(PRConfig.updateInterval)
         UNUserNotificationCenter.current().delegate = self
-        registerPriceChangedNotification()
         
         //handle url scheme
         NavigationMap.initialize()
@@ -105,15 +104,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         for i in Item.allItems() {
-            let gap = Date().timeIntervalSince1970 - Double(i.updated_at)
-            if gap > 3600 * 12 {
+            //let gap = Date().timeIntervalSince1970 - Double(i.updated_at)
+            //if gap > 3600 {
                 Item.requestWithId(p:i.asin, handler: { (item:Item?) in
                     if item == nil {
                         return
                     }
                     item!.update()
                 })
-            }
+            //}
         }
         
         completionHandler(.noData)
@@ -123,37 +122,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate : UNUserNotificationCenterDelegate {
     
-    func registerPriceChangedNotification() {
-        
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "PRICE_UPDATED"), object: nil, queue: nil) { (noti) in
-            
-            if Me.dropNotification.value == false {
-                return
-            }
-            
-            guard let item = noti.object as? Item else {
-                return
-            }
-            let content = UNMutableNotificationContent()
-            content.title = "Price has dropped to \(item.price)."
-            content.body = "\(item.title) new price: \(item.price)"
-            content.sound = UNNotificationSound.default()
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
-            let request = UNNotificationRequest(identifier: item.asin, content: content, trigger: trigger)
-            
-            let center = UNUserNotificationCenter.current()
-            center.add(request) { (error) in
-                if error != nil {
-                    print("sending location notification error:\(String(describing: error))")
-                }
-            }
-        }
-        
-    }
-    
     // - MARK: Notification task
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("notification received.")
+        let userData = response.notification.request.content.userInfo
+        guard let asin = userData["asin"] as? String else {
+            completionHandler()
+            return
+        }
+        Navigator.push("pricebot://activity/\(asin)")
         completionHandler()
     }
     

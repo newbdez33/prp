@@ -54,6 +54,7 @@
 		CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C5241E93E8A4009589FA /* ProductNode.swift */; };
 		CEF248F21EAB8E4900989417 /* ItemCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF248F11EAB8E4900989417 /* ItemCellNode.swift */; };
 		CEF25DDF1EC8AB8C0090D486 /* Usage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF25DDE1EC8AB8C0090D486 /* Usage2ViewController.swift */; };
+		CEF8E8201EF02E5D00A750A0 /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C8511EB5BDED00B39752 /* Me.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -597,6 +598,7 @@
 				CE8A80D11EA352610021C69B /* PRConfig.swift in Sources */,
 				CEA50FF21EA137480060772D /* BaseNavigationController.swift in Sources */,
 				CE54CB031E9257AF000CC3E8 /* ActionViewController.swift in Sources */,
+				CEF8E8201EF02E5D00A750A0 /* Me.swift in Sources */,
 				CE3259371E9F99F6005E5768 /* Item.swift in Sources */,
 				CED6C5261E93E8A4009589FA /* ProductNode.swift in Sources */,
 				CE8A80DA1EA3A16F0021C69B /* UIColor+PR.swift in Sources */,

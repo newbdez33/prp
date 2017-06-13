@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Gloss
 import RealmSwift
+import UserNotifications
 
 class Item: Object {
     dynamic var asin:String = ""
@@ -84,10 +85,29 @@ extension Item {
         guard let old = Item.find(byId: self.asin) else {
             return
         }
-        if self.price < old.price {
+        if self.price != old.price {
             //handling Price drop
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PRICE_UPDATED"), object: self)
             
+            //send local notification
+            if Me.dropNotification.value == false {
+                return
+            }
+
+            let content = UNMutableNotificationContent()
+            content.title = "\(self.title)"
+            content.body = "\(old.price) → \(self.price)"
+            content.sound = UNNotificationSound.default()
+            content.userInfo = ["asin":self.asin]
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
+            let request = UNNotificationRequest(identifier: self.asin, content: content, trigger: trigger)
+            
+            let center = UNUserNotificationCenter.current()
+            center.add(request) { (error) in
+                if error != nil {
+                    print("sending location notification error:\(String(describing: error))")
+                }
+            }
         }
         let realm = try! Realm()
         try! realm.write {

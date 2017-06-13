@@ -11,6 +11,7 @@ def shared_pods
     pod 'JHSpinner'
     pod 'Charts'
     pod 'RealmSwift'
+    pod 'OneStore'
     pod 'Fabric'
     pod 'Crashlytics'
 end
@@ -19,7 +20,6 @@ target 'pr' do
     pod 'TUSafariActivity'
     pod 'ESTabBarController-swift'
     pod 'Eureka'
-    pod 'OneStore'
     pod 'URLNavigator', '~> 1.2'
     pod 'Pages'
     shared_pods
