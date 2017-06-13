@@ -125,12 +125,34 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     // - MARK: Notification task
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("notification received.")
+        
         let userData = response.notification.request.content.userInfo
         guard let asin = userData["asin"] as? String else {
             completionHandler()
             return
         }
-        Navigator.push("pricebot://activity/\(asin)")
+        
+        switch response.actionIdentifier {
+        case UNNotificationDismissActionIdentifier:
+            print("Dismiss Action")
+        case UNNotificationDefaultActionIdentifier:
+            print("Default")
+            Navigator.push("pricebot://activity/\(asin)")
+        case "detailAction":
+            print("Detail Action")
+            Navigator.push("pricebot://activity/\(asin)")
+        case "urlAction":
+            print("URL Action")
+            if let urlstr = userData["url"] as? String {
+                if let url = URL(string: urlstr) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        default:
+            print("case Default action")
+            Navigator.push("pricebot://activity/\(asin)")
+        }
+        
         completionHandler()
     }
     

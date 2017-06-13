@@ -94,15 +94,31 @@ extension Item {
                 return
             }
 
+            let detail = UNNotificationAction(identifier: "detailAction", title: NSLocalizedString("Detail",  comment: ""), options: [.foreground])
+            let goUrl = UNNotificationAction(identifier: "urlAction", title: NSLocalizedString("Open Product URL",  comment: ""), options: [])
+            let category = UNNotificationCategory(identifier: "ProductNotificationCategory", actions: [detail, goUrl], intentIdentifiers: [], options: [])
+            /*
+            let url = URL(string: self.photo)
+            if url != nil {
+                let attachmentIdentifier = "PhotoAttachment"
+                if let attachment = try? UNNotificationAttachment(identifier: attachmentIdentifier, url: url!, options: nil) {
+                    content.attachments = [attachment]
+                }
+            }
+             */
+
             let content = UNMutableNotificationContent()
             content.title = "\(self.title)"
             content.body = "\(old.price) → \(self.price)"
             content.sound = UNNotificationSound.default()
-            content.userInfo = ["asin":self.asin]
+            content.userInfo = ["asin":self.asin, "url":self.clean_url]
+            content.categoryIdentifier = "ProductNotificationCategory"
+            
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
             let request = UNNotificationRequest(identifier: self.asin, content: content, trigger: trigger)
             
             let center = UNUserNotificationCenter.current()
+            center.setNotificationCategories([category])
             center.add(request) { (error) in
                 if error != nil {
                     print("sending location notification error:\(String(describing: error))")
