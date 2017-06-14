@@ -17,7 +17,8 @@ class Usage2ViewController: UIViewController {
         //Everything is here! Open Amazon site now
         let attrString = NSMutableAttributedString(string: NSLocalizedString("Everything is here!", comment: ""),
                                                    attributes: [ NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size:14)! ])
-        
+        attrString.append(NSMutableAttributedString(string: " ",
+                                                    attributes: [NSFontAttributeName: UIFont(name:"HelveticaNeue-Bold", size:14)! ]))
         attrString.append(NSMutableAttributedString(string: NSLocalizedString("Open Amazon site now", comment: ""),
                                                     attributes: [NSFontAttributeName: UIFont(name:"HelveticaNeue-Bold", size:14)! ]))
         openButton.setAttributedTitle(attrString, for: .normal)
