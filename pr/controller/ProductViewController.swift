@@ -76,17 +76,28 @@ final class ProductViewController: UIViewController {
         scrollNode.addSubnode(productNode)
         
         let item = Item.find(byId: asin)
-        if item == nil {
-            Item.requestWithId(p: asin, handler: { [weak self] (obj) in
-                if obj != nil {
-                    self?.bindItem(item: obj!)
-                }else {
-                    //TODO Handle error
-                }
-            })
-        }else {
+        if item != nil {
             self.bindItem(item: item!)
         }
+        Item.requestWithId(p: asin, handler: { [weak self] (obj) in
+            if obj != nil {
+                if item!.price != obj!.price {
+                    if item != nil {    //keep isTracking
+                        item!.price = obj!.price
+                        item!.highest = obj!.highest
+                        item!.lowest = obj!.lowest
+                        item!.currency = obj!.currency
+                        item!.photo = obj!.photo
+                        item!.title = obj!.title
+                        self?.bindItem(item: item!)
+                    }else {
+                        self?.bindItem(item: obj!)
+                    }
+                }
+            }else {
+                //TODO Handle error
+            }
+        })
 
         Price.requestHistoryWithId(p: asin) { (items:[Price]) in
             //TODO only return extra items
