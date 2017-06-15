@@ -24,7 +24,7 @@ class SettingsViewController: FormViewController {
             +++
             Section(NSLocalizedString("PRICE NOTIFICATION", comment: ""))
             <<<
-            SwitchRow(NSLocalizedString("Price notification", comment: "")) {
+            SwitchRow(NSLocalizedString("Enable price notification", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
