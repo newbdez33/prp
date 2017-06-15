@@ -112,7 +112,7 @@ extension Item {
 
             let content = UNMutableNotificationContent()
             content.title = "\(self.title)"
-            content.body = "\(old.price) → \(self.price)"
+            content.body = "\(self.currency)\(old.price) → \(self.currency)\(self.price)"
             content.sound = UNNotificationSound.default()
             content.userInfo = ["asin":self.asin, "url":self.clean_url]
             content.categoryIdentifier = "ProductNotificationCategory"
