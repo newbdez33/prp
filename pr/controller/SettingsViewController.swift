@@ -22,9 +22,9 @@ class SettingsViewController: FormViewController {
                 $0.header = HeaderFooterView<PRLogoView>(.class)
             }
             +++
-            Section(NSLocalizedString("PRICE CHANGE NOTIFICATION", comment: ""))
+            Section(NSLocalizedString("PRICE NOTIFICATION", comment: ""))
             <<<
-            SwitchRow(NSLocalizedString("Price change notification", comment: "")) {
+            SwitchRow(NSLocalizedString("Price notification", comment: "")) {
                 $0.title = $0.tag
                 $0.cell.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)!
                 $0.cell.textLabel?.textColor = UIColor.prBlack()
