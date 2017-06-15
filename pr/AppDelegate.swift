@@ -123,8 +123,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 item!.update()
             })
-            completionHandler(.newData)
-            return   //only one item a time
+            //TODO check time out
+            //completionHandler(.newData)
+            //return   //only one item a time
         }
         print("no item is updated.")
         completionHandler(.noData)
