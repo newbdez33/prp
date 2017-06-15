@@ -83,14 +83,17 @@ extension Item {
     
     func update() {
         guard let old = Item.find(byId: self.asin) else {
+            print("old item not found.")
             return
         }
         if self.price != old.price {
+            print("price changed.")
             //handling Price drop
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PRICE_UPDATED"), object: self)
             
             //send local notification
             if Me.dropNotification.value == false {
+                print("user not allowed notification.")
                 return
             }
 
@@ -124,6 +127,8 @@ extension Item {
                     print("sending location notification error:\(String(describing: error))")
                 }
             }
+        }else {
+            print("price not changed.")
         }
         let realm = try! Realm()
         try! realm.write {
@@ -191,6 +196,13 @@ extension Item {
     static func allItems() -> Results<Item> {
         let realm = try! Realm()
         let result = realm.objects(Item.self).sorted(byKeyPath: "added_at", ascending: false)
+        return result
+    }
+    
+    static func itemsForUpdate() -> Results<Item> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "isTracking == true")
+        let result = realm.objects(Item.self).filter(predicate).sorted(byKeyPath: "updated_at", ascending: true)
         return result
     }
 }

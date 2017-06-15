@@ -103,18 +103,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // - MARK: Background task
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        for i in Item.allItems() {
-            //let gap = Date().timeIntervalSince1970 - Double(i.updated_at)
-            //if gap > 3600 {
-                Item.requestWithId(p:i.asin, handler: { (item:Item?) in
-                    if item == nil {
-                        return
-                    }
-                    item!.update()
-                })
-            //}
+        for i in Item.itemsForUpdate() {
+            let date = Date(timeIntervalSince1970: Double(i.updated_at))
+            let dayTimePeriodFormatter = DateFormatter()
+            dayTimePeriodFormatter.dateFormat = "MMM dd YYYY hh:mm a"
+            let dateString = dayTimePeriodFormatter.string(from: date)
+            print("date:\(dateString)")
+            
+            let gap = Date().timeIntervalSince1970 - Double(i.updated_at)
+            if gap < 60 {   //should be 3600
+                continue
+            }
+            print("checking:\(i.title)")
+            Item.requestWithId(p:i.asin, handler: { (item:Item?) in
+                if item == nil {
+                    print("item == nil")
+                    completionHandler(.failed)
+                    return
+                }
+                item!.update()
+            })
+            completionHandler(.newData)
+            return   //only one item a time
         }
-        
+        print("no item is updated.")
         completionHandler(.noData)
     }
     

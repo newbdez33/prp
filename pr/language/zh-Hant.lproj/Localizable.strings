@@ -19,6 +19,8 @@
 
 "PRICE DROP NOTIFICATION" = "降價通知";
 "Price drop notification" = "開啟降價通知";
+"PRICE CHANGE NOTIFICATION" = "價格通知";
+"Price change notification" = "開啟價格通知";
 "USE PRICE BOT" = "使用";
 "How to use it" = "如何使用";
 "Recommend Price Bot" = "把 Price Bot 分享給朋友";
